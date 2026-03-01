@@ -1,0 +1,401 @@
+PDF 文件：2020-disorder-Algorithm for generating irreducible site-occupancy configurations.pdf
+总页数：9
+================================================================================
+
+
+--- 第 1 页 ---
+PHYSICAL REVIEW B 102, 134209 (2020)
+Algorithm for generating irreducible site-occupancy conﬁgurations
+Ji-Chun Lian ,1 Hong-Yu Wu,1 Wei-Qing Huang ,1,* Wangyu Hu ,2 and Gui-Fang Huang1,†
+1Department of Applied Physics, School of Physics and Electronics, Hunan University, Changsha 410082, China
+2School of Materials Science and Engineering, Hunan University, Changsha 410082, China
+(Received 18 May 2020; accepted 29 September 2020; published 22 October 2020)
+Generating irreducible site-occupancy conﬁgurations by taking advantage of crystal symmetry is a ubiquitous
+method for the acceleration of disordered structure prediction, which plays an important role in condensed
+matter physics and material science. Here, we present an algorithm for generating irreducible site-occupancy
+conﬁgurations, which works for arbitrary parent cells with any supercell expansion matrix, and for any number
+of atom types with arbitrary stoichiometry. The algorithm identiﬁes the symmetrically equivalent conﬁgurations
+by searching the space group operations of the underlying lattice and building the equivalent atomic matrix based
+on it. Importantly, an integer representation of conﬁgurations can greatly accelerate the speed of elimination of
+duplicate conﬁgurations, resulting in a linear scale of run time with the number of irreducible conﬁgurations
+that are ﬁnally found. Moreover, based on our algorithm, we write the corresponding code named disorder in
+FORTRAN programming language, and the performance test results show that the time efﬁciency of our disorder
+code is superior to that of other related codes (supercell, enumlib, and SOD).
+DOI: 10.1103/PhysRevB.102.134209
+I. INTRODUCTION
+Searching unknown structures is of paramount potential
+impact in condensed matter physics and materials science
+[1–4]. The high efﬁciency and accuracy of ﬁrst-principles cal-
+culations in describing the structural thermodynamic stability
+[5–7] and other related properties [ 8–10] has greatly pro-
+moted the process of structure prediction; extensive structural
+ground state properties calculations become reality. However,
+the evaluating of structural relative stabilities based on ﬁrst-
+principles calculations becomes challenging for the issue of
+site-occupancy disorder [11–15]; a subset of the structure pre-
+diction problem, whose structures are derived from a speciﬁc
+underlying lattice. The reason is that the underlying lattice is
+often a large supercell, which not only increases the computa-
+tional load of ﬁrst-principles, but also the number of structures
+derived from it dramatically increases due to combinatorial
+explosion. Nevertheless, the efforts have not been stopped and
+will never be stopped, as many profound physical and ma-
+terial phenomena are observed in disordered structures, and
+bring about important applications in ﬁelds such as metallic
+alloys [16,17], nonstoichiometric materials [18,19] and high-
+temperature superconductors [ 20–23]. Aiming to overcome
+this obstacle, several methods have been developed to reduce
+the generated atomic conﬁgurations [24–27]. In this paper, we
+focus on one of those methods, i.e., searching the irreducible
+conﬁgurations in a complete list of atomic conﬁgurations by
+taking advantage of crystal symmetry.
+Many combinatorially distinct conﬁgurations are geometri-
+cally identical; they are related by the symmetry operations of
+*Corresponding author: wqhuang@hnu.edu.cn
+†Corresponding author: gfhuang@hnu.edu.cn
+the underlying lattice. The main idea of searching irreducible
+conﬁgurations is to generate an exhaustive list of combinato-
+rially distinct conﬁgurations, then eliminating the duplicates,
+i.e., the symmetrically equivalent conﬁgurations. Such an idea
+is adopted by many existing algorithms [ 24,28–30], but the
+implementations are diverse from each other. In the following,
+several representative algorithms for generating irreducible
+site-occupancy conﬁgurations will be brieﬂy introduced.
+The algorithm implemented in SOD software (released in
+2007) is one of the excellent representatives [24]. The SOD al-
+gorithm identiﬁes the equivalent conﬁgurations utilizing space
+group operations of the underlying lattice, which are reading
+from a database of space group operations. The superiority
+of the SOD algorithm lies in its simplicity in concept and
+programming. However, it only works for the binary site-
+occupancy systems, and the nondiagonal supercell expansion
+matrix is forbidden in SOD software, although these short-
+comings are caused by programming limitations, not by the
+approach itself. In addition, its run time will grow explosively
+with the increase of the number of conﬁgurations, which
+is mainly caused by an algorithmic problem (evitable), and
+partly resulted from a combinatorial problem (ineluctable).
+Compared with the SOD algorithm, extraordinary progress
+is made by the algorithm implemented in enumlib software
+(released in 2008) [28]. The enumlib algorithm applies to any
+parent cell, arbitrary supercell expansion matrix, and multi-
+nary (binary, ternary, quaternary etc.) site-occupancy systems.
+For the ﬁrst version, the enumlib algorithm applies only to
+the Bravais lattices, and it does not work at a certain stoi-
+chiometry. These problems have been solved in the latter two
+extensions [31,32]. The key concept of the enumlib algorithm
+is to use the quotient group associated with the underlying
+lattice and an integer representation of the conﬁgurations to
+determine all unique structures. Proﬁting by this concept,
+2469-9950/2020/102(13)/134209(9) 134209-1 ©2020 American Physical Society
+
+
+--- 第 2 页 ---
+LIAN, WU, HUANG, HU, AND HUANG PHYSICAL REVIEW B 102, 134209 (2020)
+the enumlib algorithm is orders of magnitude faster than the
+SOD algorithm and realized a linear scale of run time with
+the number of irreducible conﬁgurations, which is the best
+possible scaling for this type of problem.
+Although the run time of the enumlib algorithm scales
+linearly with the number of irreducible conﬁgurations, the
+calculation time is far beyond a reasonable limit when the
+number of conﬁgurations is huge (say millions). Therefore,
+the algorithm performance still has the possibility to be further
+improved, which has become a reality in supercell software
+(released in 2016) [ 30]. The algorithm implemented in su-
+percell is similar in essence to the enumlib algorithm, but its
+time efﬁciency is about ten times that of enumlib algorithm.
+However, the supercell algorithm cannot support nondiagonal
+supercell expansion matrix, which limits its exploration for
+different supercell shapes.
+In this paper, we present an implementation for the genera-
+tion algorithm of irreducible site-occupancy conﬁgurations. In
+our algorithm, we enumerate the combination conﬁgurations
+to represent the combinatorially distinct atomic conﬁgura-
+tions, and extend it to the multinary site-occupancy systems.
+Our algorithm identiﬁes the symmetrically equivalent con-
+ﬁgurations by an equivalent atomic matrix, while the space
+group operations used to build it are searched from the struc-
+tural information (only the lattice parameters and atomic
+positions are needed) of arbitrary supercell straightforwardly.
+As a result, the algorithm is applicable for arbitrary par-
+ent cells with any supercell expansion matrix including the
+nondiagonal one, which is forbidden in SOD and supercell
+softwares. In addition, a linear scale of run time with the
+number of irreducible conﬁgurations is achieved also, bene-
+ﬁtted by the concept of using a series of consecutive integers
+to represent the conﬁgurations. Most of all, the speed of
+eliminating duplicate conﬁgurations is greatly accelerated,
+due to the efﬁcient conversion algorithm of conﬁgurations
+to integers, and hence faster than that of the supercell
+algorithm.
+II. METHODOLOGY
+The algorithm for generating irreducible site-occupancy
+conﬁgurations can be summarized into four critical tasks:
+(1) searching space group operations to build the equivalent
+atoms matrix, (2) enumerating all atomic conﬁgurations based
+on combinatorics, (3) eliminating the duplicate conﬁgurations
+by using symmetries (the most time-consuming procedure),
+(4) converting atomic conﬁgurations into consecutive integers
+to accelerate the third task. In the following, a detailed de-
+scription of the algorithm implementation is presented.
+A. Searching space group operations
+Searching space group operations is a key point for iden-
+tifying equivalent atomic conﬁgurations. The algorithm for
+searching space group operations is based on Spglib:as o f t -
+ware library for crystal symmetry search [ 33]. Although the
+original algorithm implemented in Spglib is used for the prim-
+itive cell, it can be applied to an arbitrary cell with appropriate
+modiﬁcations. The algorithm of searching space group opera-
+tions used here is a simpliﬁed and modiﬁed version of Spglib.
+The space group operation is deﬁned by a 3 × 3 integer
+matrix W (rotation part) and a 3× 1 decimal column vector ω
+(translation part). An arbitrary atomic pointx on the fractional
+coordinates must be sent to another atomic point (or itself) x
+′
+with the same atomic type by one of the valid space group
+operations (W, ω)b y x′ = Wx + ω.
+In the following, a brief outline of the algorithm for
+searching all valid space group operations is presented (the
+elaborated description is given in Ref. [33]).
+1. Searching pure translation operations [See Ref. [33], Step (a)]
+The pure translation operations are expressed as ( I, ω),
+where I is the identity matrix. Generally, the input cell (i.e.,
+the underlying lattice) is a nonprimitive cell, so that there are
+multiple pure translation operations, (I, ω) will be found, and
+the number ( N
+t ) of pure translation operations is the volume
+of the input cell divided by the volume of its primitive cell.
+2. Searching lattice point group operations [See Ref. [33], Step (f)]
+In this step, all the matrix elements of possible W are
+selected from {−1, 0, 1} to satisfy |det(W )|= 1. Afterwards,
+the possible W are further screened by the conditions for
+metric tensor G, which is deﬁned by G = (a, b, c)T(a, b, c),
+where ( a, b, c) is the lattice basis vectors. In the spglib,t h e
+basis vectors used to deﬁne metric tensor G is that of the
+primitive cell. Here, we replace it with that of the input cell
+to obtain the space group operations of arbitrary cell.
+3. Searching space group operations [See Ref. [33], Step (g)]
+For a nonprimitive cell, similar to pure translation opera-
+tions, one W will correspond to multiple ω. Thus, the total
+number (Ns) of space group operations is the number ( Nr)o f
+its rotation part multiply by the number ( Nt) of its translation
+part, i.e., Ns = Nr × Nt . In reality, for one W , only one (any
+one) corresponding ω needs to be searched out, while the full
+space group operations can be obtained by combining pure
+translation operations.
+4. Building equivalent atomic matrix
+Building an equivalent atomic matrix will advantageous
+to identify the equivalent atomic conﬁgurations conveniently
+and quickly. A set of atomic points labeled with consecutive
+integers are transformed into another set of atomic points by
+a space group operation. The labels of the transformed atomic
+points constitute one row elements of the equivalent atomic
+matrix, while the complete equivalent atomic matrix can be
+obtained by traversing all space group operations.
+B. Enumerating all atomic conﬁgurations
+The enumeration of all possible atomic conﬁgurations is
+based on combinatorics. We ﬁrst consider an underlying lat-
+tice with K atomic positions that can be occupied by N
+different types of atoms (the vacancies are deemed as a spe-
+cial type of atoms), and the atomic number of each type is
+k
+i(i = 1... N ), satisfying K = ∑N
+i=1 ki. The total number (Nc)
+of atomic conﬁgurations can be obtained by the multinomial
+134209-2
+
+
+--- 第 3 页 ---
+ALGORITHM FOR GENERATING IRREDUCIBLE … PHYSICAL REVIEW B 102, 134209 (2020)
+FIG. 1. The two enumeration ways of binary site-occupancy conﬁgurations forK = 6, k1 = 4 (red), k2 = 2 (blue). (a) The ﬁrst enumeration
+way, i.e., enumerating the conﬁgurations for the red color, while the blue color is occupying the remaining atomic positions. (b) The second
+enumeration way, i.e., enumerating the conﬁgurations for the blue color, while the red color is occupying the remaining atomic positions.
+coefﬁcient:
+Nc(k1, k2,..., kN ) = (k1 + k2 +···+ kN )!
+k1!k2! ··· kN ! =
+(∑N
+i=1 ki
+)
+!
+∏N
+i=1 ki!
+.
+(1)
+For clarity, we will introduce our algorithm in two steps.
+Speciﬁcally, we start with a special case, i.e., the binary (N =
+2) site-occupancy case, and then, extend it to the general case,
+i.e., the multinary (N ⩾ 3) site-occupancy case.
+1. Binary site-occupancy
+The binary site-occupancy is two different types of atoms
+occupying K atomic positions. In such a special case, accord-
+i n gt oE q .(1), the total number of atomic conﬁgurations is
+expressed as a binomial coefﬁcient:
+Nc(k1, k2 ) = (k1 + k2 )!
+k1!k2! = K!
+k1!k2! = Ck1
+K = Ck2
+K , (2)
+where Cm
+n = n!
+m!(n− m)! .
+As mentioned above, our task is enumerating all possible
+atomic conﬁgurations. The algorithm enumerates all binary
+combination conﬁgurations to represent the atomic conﬁgura-
+tions. The binary combination conﬁgurations, corresponding
+to binomial coefﬁcient C
+m
+n , are the possible ways to choose
+a subset of size m elements, disregarding their order, in an
+integer set from 1 to n with n elements. Hereafter, for conve-
+nience, we use different colors to represent different types of
+atoms, and a list A with C
+k1
+K rows and k1 columns is adopted to
+store the atomic conﬁgurations for binary site-occupancy. Ob-
+viously, we only need to determine the atomic conﬁgurations
+of one color, while the others occupy the remaining atomic
+positions. Therefore, there are two ways to enumerate atomic
+conﬁgurations A, as shown in Fig. 1, where an example is for
+K = 6, k
+1 = 4 (red), k2 = 2 (blue). In practice, undoubtedly,
+we can enumerate the lesser one of the two colors to reduce
+the computational load.
+2. Multinary site-occupancy
+The multinary site-occupancy is N (N ⩾ 3) different types
+of atoms occupying K atomic positions. The total number
+of possible atomic conﬁgurations for the multinary site-
+occupancy can be obtained from Eq. ( 1). Here we rewrite it
+as
+N
+c(k1, k2,..., kN ) = K!
+k1!k2! ··· kN !
+= Ck1
+K Ck2
+K− k1
+Ck3
+K− k1− k2
+··· CkN−1
+K− k1− k2−···− kN−2
+.
+(3)
+Its physical meaning is obvious: ﬁrst let k1 atoms occu-
+pying K atomic positions, then let k2 atoms occupying the
+remaining K − k1 atomic positions, and so on. Of course, the
+order of k1, k2,..., kN is irrelevant. This means that we can
+decompose the multinary site-occupancy into several binary
+site-occupancies.
+We represent these binary combination conﬁgurations,
+corresponding to binomial coefﬁcients in Eq. ( 3),
+as lists B
+(1), B(2),..., B(N−1), with Ck1
+K , Ck2
+K− k1
+,...,
+CkN−1
+K− k1− k2−···− kN−2−2 rows and k1, k2,..., kN−1 columns. Then,
+the multinary combination conﬁgurations B can be deﬁned
+by simply uniting these binary combination conﬁgurations, as
+follows:
+B
+n = B(1)
+i ∪ B(2)
+j ∪···∪ B(N−1)
+k ,
+n ∈ [1, Nc(k1, k2,..., kN )], i ∈
+[
+1, Ck1
+K
+]
+, j ∈
+[
+1, Ck2
+K− k1
+]
+,
+k ∈
+[
+1, CkN−1
+K− k1− k2−···− kN−2
+]
+.
+However, unlike the binary site-occupancy, the combination
+conﬁgurations deﬁned above are not the atomic conﬁg-
+urations. Therefore, we need to convert the combination
+conﬁgurations to the atomic conﬁgurations.
+134209-3
+
+
+--- 第 4 页 ---
+LIAN, WU, HUANG, HU, AND HUANG PHYSICAL REVIEW B 102, 134209 (2020)
+FIG. 2. The enumeration of ternary site-occupancy conﬁgurations for K = 6, k1 = 2 (red), k2 = 3 (blue), k3 = 1 (green). (a) The binary
+combination conﬁgurations for red and blue colors. (b) The conversion of combination conﬁgurations to atomic conﬁgurations.
+Given conﬁguration a, and its corresponding combination
+conﬁguration b can be disassembled into
+a = a(1) ∪ a(2) ∪···∪ a(N−1),
+b = b(1) ∪ b(2) ∪···∪ b(N−1).
+Moreover, a series of arrays ( L(1), L(2),..., L(N−1) ) with
+(K, K − k1,..., K − k1 −···− kN−2 ) columns are used to
+label the atomic positions, where L(1) is the original atomic
+label, L(2) is the atomic label after removing a(1), and the like,
+L(N−1) is the atomic label after removing a(1) ∪ a(2) ∪···∪
+a(N−2). Then, the transformation relationship between a and b
+can be written as
+a(n)
+i = L(n)
+b(n)
+i
+, (4)
+where, n ∈ [1, N − 1], i ∈ [1, kn], and i is the column index
+of a(n) or b(n). Here, we take the ternary site-occupancy as
+an example, and specify K = 6, k1 = 2 (red), k2 = 3 (blue),
+k3 = 1 (green). For the ternary site-occupancy, we can de-
+compose it into two binary site-occupancy, the combination
+conﬁgurations of them and the resulting atomic conﬁgurations
+are shown in Fig. 2.
+C. Converting conﬁgurations to integers
+As stated previously, the third task is eliminating the du-
+plicate conﬁgurations, which is the most time-consuming
+procedure. The process of eliminating duplicate conﬁgura-
+tions can be greatly accelerated by the directly determination
+of conﬁguration indexes, which is expressed as a set of con-
+secutive integers. In the following, we will show how it is
+implemented and explain why it is so efﬁcient.
+FIG. 3. The conversion of binary site-occupancy conﬁgurations to consecutive integers (indexes) for K = 6, k1 = 4 (red), k2 = 2 (blue).
+(a) The atomic conﬁgurations and its corresponding indexes. (b) The constructing ﬂow of matrix E. (c) Two speciﬁc examples of atomic
+conﬁgurations to integers.
+134209-4
+
+
+--- 第 5 页 ---
+ALGORITHM FOR GENERATING IRREDUCIBLE … PHYSICAL REVIEW B 102, 134209 (2020)
+FIG. 4. The conversion of ternary site-occupancy conﬁgurations to consecutive integers (indexes) for K = 6, k1 = 2 (red), k2 = 3 (blue),
+k3 = 1 (green). (a) The atomic conﬁgurations and its corresponding combination conﬁgurations and indexes. (b) The constructing ﬂow of
+matrix E and its submatrices E(1) , E(2) . (c) Two speciﬁc examples of atomic conﬁgurations to integers.
+1. Binary site-occupancy
+For the binary site-occupancy, the conﬁguration in-
+dex of arbitrarily atomic conﬁguration can be calculated
+by the following procedure. First, we build a matrix D
+as follows:
+Dij =
+{0,i = 1
+Ck1− j
+k1− j+i−2,i ̸= 1,
+where, the number of rows is K − k1 + 1, the number of
+columns is k1, i ( j) is the row (column) index, and we deﬁne
+C0
+n = 1 .B a s e do nm a t r i xD, another matrix E with the same
+size can be obtained, as shown below:
+Eij =
+i∑
+k=1
+Dkj . (5)
+Then, given a conﬁguration a, its conﬁguration index m can
+be expressed as
+m = Ck1
+K −
+k1∑
+j=1
+Eij , (6)
+134209-5
+
