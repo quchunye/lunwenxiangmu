@@ -61,8 +61,12 @@ def create_local_backup():
     print(f"共备份 {copied_count} 个项目")
     return backup_path
 
-def create_aliyun_backup():
-    """创建阿里云备份（同步到阿里云盘）"""
+def create_aliyun_backup(skip_upload=True):
+    """创建阿里云备份（同步到阿里云盘）
+    
+    参数:
+        skip_upload: 是否跳过实际上传（默认 True，仅创建本地 ZIP）
+    """
     print("\n" + "=" * 60)
     print("创建阿里云备份")
     print("=" * 60)
@@ -110,12 +114,18 @@ def create_aliyun_backup():
             )
             print(f"✓ 创建压缩包：{zip_path}")
     
-    # TODO: 添加阿里云盘 API 上传逻辑
-    # 注意：需要使用阿里云盘 API 或 CLI 工具进行实际上传
-    # 这里提供框架，实际使用时需要配置阿里云盘认证
-    
-    print("\n提示：阿里云盘上传需要配置 API 认证")
-    print("建议使用阿里云盘官方客户端或第三方工具进行同步")
+    # 根据参数决定是否上传
+    if skip_upload:
+        print("\n[已跳过上传] 仅创建本地 ZIP 压缩包")
+        print("提示：需要上传时，修改 auto_backup.py 中 create_aliyun_backup(skip_upload=False)")
+        print("或使用阿里云盘官方客户端/第三方工具手动同步")
+    else:
+        # TODO: 添加阿里云盘 API 上传逻辑
+        # 注意：需要使用阿里云盘 API 或 CLI 工具进行实际上传
+        # 这里提供框架，实际使用时需要配置阿里云盘认证
+        
+        print("\n提示：阿里云盘上传需要配置 API 认证")
+        print("建议使用阿里云盘官方客户端或第三方工具进行同步")
     
     return zip_fullpath + '.zip'
 
@@ -158,8 +168,8 @@ def main():
         # 1. 创建本地时间戳备份
         local_backup = create_local_backup()
         
-        # 2. 创建阿里云备份
-        aliyun_backup = create_aliyun_backup()
+        # 2. 创建阿里云备份（默认跳过上传，仅创建 ZIP）
+        aliyun_backup = create_aliyun_backup(skip_upload=True)
         
         # 3. 清理旧备份
         cleanup_old_backups(keep_days=30)
