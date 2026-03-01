@@ -1,0 +1,587 @@
+PDF 文件：1990-Special Quasirandom Structures.pdf
+总页数：4
+================================================================================
+
+
+--- 第 1 页 ---
+VOLUME 65, NUMBER 3 PHYSICAL REVIEW LETTERS 16 JULY 1990
+Special Quasirandom Structures
+Alex Zunger, S.-H. Wei, L. G. Ferreira, and James E. Bernard
+Solar Energy Research Institute, Golden, Colorado 80401
+(Received 24 August 1989)
+Structural models used in calculations of properties of substitutionally random A l -„B,alloys are usu-
+ally constructed by randomly occupying each of the N sites of a periodic cell by 2 or B. We show that it
+is possible to design "special quasirandom structures' (SQS's) that mimic for small N (even N 8) the
+first few, physically most relevant radial correlation functions of a perfectly random structure far better
+than the standard technique does. We demonstrate the usefulness of these SQS's by calculating optical
+and thermodynamic properties of a number of semiconductor alloys in the local-density formalism.
+PACS numbers: 61.55.Hg, 71.10.+x, 71.25.Tn
+One of the significant realizations to emerge from re-
+cent electronic structure calculations of crystals, impuri-
+ties, and surfaces is that electronic properties sensitively
+reflect the details of the microscopic atomic arrange-
+ments, including small changes in atomic positions ("re-
+laxation" ). Yet, many theories of substitutional A ~ „8,
+random alloys are nonstructural, in that they consider
+only the average occupations by (A) or (8) of sites, re-
+moving from the theory the informational content associ-
+ated with the geometrical arrangements of atoms around
+a site. Such is the "virtual-crystal approximation"
+(VCA), where the alloy is assumed to have a single,
+(AB)-averaged type of site, or the site coherent-potential
+approximation (SCPA), where all A's and separately all
+8's are assumed equivalent and each is embedded in a
+structureless uniform average medium; structural relaxa-
+tion is excluded in both approaches. Experimental tech-
+niques capable of probing the average local properties of
+alloys have, however, clearly demonstrated the irnpor-
+tant role played by the microscopic atomic structure.
+For example, even in homogeneous 3 ~
+—„8, alloys
+without short- or long-range order the average A-A, A-B,
+and 8-8 distances are generally different; in semicon-
+ductor alloys similar atomic relaxations have been shown
+to control the band gaps ' and thermodynam-
+ic ' ' quantities. On the other hand, the obvious
+difficulty with structural theories of alloys arises from
+the fact that even in the simplest case of a binary system
+with N sites, there are 2 possible atomic configurations
+whose total energy needs to be structurally relaxed, then
+averaged. One then proceeds in practice either by select-
+ing a smaller number of "representative" configurations
+(e.g., the Monte Carlo approach ), or a single periodic
+structure with a random distribution of 8 and 8 atoms
+on its N sites. While these techniques explicitly specify
+the alloy structure, and can hence incorporate atomic re-
+laxation, they approach the statistical limit as slowly as
+N ' . Therefore, they involve a rather large number of
+configurations (e.g., —10 in Monte Carlo studies ) or
+large cell sizes (e.g., ) 10 atoms) (Refs. 5 and 6), for
+which first-principles self-consistent calculations (cur-
+rently restricted to N ~ 50 atoms') are still impractical.
+We show here that by selective occupation of the N lat-
+tice sites by 2 and 8 atoms one can construct special
+periodic "quasirandom structures" that mimic, for finite
+N, the correlation functions of an infinite substitutional
+random alloy far more closely than does the standard ap-
+proach of occupying each of the N sites randomly by A
+or B. While both approaches produce the same results
+for N ~, the present approach produces excellent ap-
+proximations already for N 0(10), and hence affords
+application of accurate electronic structure methods' for
+calculating structural, optical, and thermodynamic prop-
+erties of random alloys. This is illustrated here for a
+number of semiconductor alloys.
+Describing random alloys by periodic structures will
+clearly introduce spurious correlations beyond a certain
+distance ("periodicity errors"). However, many physical
+properties of solids are characterized by microscopic
+length scales that can be ordered according to size to
+form a hierarchy. For example, interactions between
+distant neighbors generally contribute less to the total
+energy than do interactions between close neighbors.
+We hence guide our construction of "special quasiran-
+dom structures" (SQS's) by the principle of close repro-
+duction of the perfectly random network for the first few
+shells around a given site, deferring periodicity errors to
+more distant neighbors. This approach has an obvious
+resemblance to the principle guiding the selection of
+"special k points" for Brillouin-zone integration.
+We characterize the structure of the alloy by the mul-
+tisite correlation functions familiar from statistical lat-
+tice theories. ' Here, any given arrangement of A and
+8 atoms on a lattice (a "configuration" cr) is discretized
+into its component "figures" f (k, m), e.g., pairs of
+atoms (a figure with k 2 vertices separated by an mth-
+neighbor distance), triangles (k=3 vertices), etc. Using
+the language of Ising models, ' ' we assign to each site
+i in a figure a spin variable S, which takes the value —1
+if it is occupied by A, or + 1 if occupied by 8. We define
+as IIf(l, cr) the product QS; of spin variables for figure f
+positioned in the lattice at location I (where I includes
+also its orientation). There are Df figures per site. A
+lattice average (denoted by a bar) of the spin product
+ 1990 The American Physical Society 353
+
+
+
+--- 第 2 页 ---
+VOLUME 65, NUMBER 3 PHYSICAL REVIEW LETTERS 16 JULY 1990
+(2)
+over all locations of symmetry-related figures of type f
+gives
+IIf(~) = QIIf(l, ~) .
+1
+(1)NDf
+The ensemble average of a physical property P over
+configurations (denoted by angular brackets) can be
+rigorously ' expanded as
+(P) =g Dk, (&~, )p~,
+k, m
+where pk „, are the "interaction parameters" of figures
+f=(k, m) and (IIt, ) are the correlation functions. Ns
+values of [pt, ] can be determined if Nq values of (P)
+are available (e.g., from band theory "). For a perfect-
+ly random (R) A ~ „B„structure, the many-body (k&0)
+correlation functions are (IIt, )tt (2x —1)"; hence, at
+x = —,', they vanish to all orders, except Ho ~ 1.
+The usual approach for simulating properties of ran-
+dom alloys through a finite-N representation of Eq. (2)
+(e.g., see Ref. 6) assumes that each site should be indi-
+vidually occupied at random by A or B. The extent to
+which this approach produces a finite-N-atom/cell struc-
+ture that, as a whole, approaches randomness can be
+measured by the standard deviation rtt, (N)
+= ~(IIt. ) ~'t . While for an isolated cell with N lattice
+site, rtt,
+' (N) =(Dt, N) ', application of this pro-
+cedure to a periodic N-atom/cell structure typical of the
+sizes for which first-principles electronic structure calcu-
+lations are practical, could produce even larger errors.
+This is seen in Table I, which gives for x = —, the stan-
+dard deviation rt& (N) obtained by randomly occupying
+N fcc sites of a periodic structure in a sufficiently large
+number of ways (-3000) so that converged statistics
+are obtained. We see that rtl, (N) & rti,
+' (N) and that
+periodicity errors (denoted in Table I by correlation
+function values of —1 rather than 0) occur at rather
+short distances from the origin.
+Our central idea here is that instead of attempting to
+approach (IIt )g by statistical sampling methods, we
+can design "special" N-atom periodic structures S whose
+distinct (i.e., no ensemble average) correlation functions
+IIk (S) best match the ensemble averages (IIk )tt of
+the random alloy. Since by Eqs. (1) and (2) the error in
+the property P relative to that in a perfectly random al-
+loy is represented in terms of a hierarchy of distances,
+(P) —P(S) g Di, [(2x—1) —IIt, , (S)]pk, , (3)I,m
+(the prime denotes omission of k =0 and 1), it is natural
+to select the structure S so that the right-hand side is
+minimized in a hierarchical manner. For instance, in-
+sisting that the most important correlation functions
+—those for the first and second neighbors —have zero
+errors at x —,', gives already for N =8 in fcc symmetry
+an SQS (denoted in Table I SQS-8). Its unit cell is best
+described as an A2B3A2B~ superlattice along the [113]
+direction. Using, for example, the criterion that II2 ~
+=0
+and H22+H23+H24 minimum, we also find that the
+TABLE I. The upper part gives the absolute values of the mth-neighbor pair-correlation
+functions as obtained in SQS; for the perfectly random alloys at x=-,', (ll& „,) 0, hence
+departure from zero measures errors. Below those we give the standard deviation, also about
+zero, as obtained in random site-by-site occupations of N atom supercells. Finally, we give the
+average number of neighbors to a given atom of opposite type.
+1st 2nd 3rd
+12
+4th 5th
+12
+6th
+Errors in correlation functions
+CuPt
+SQS-2
+SQS-4
+SQS-6
+SQS-8
+N 8"
+N 16b
+N 32'
+N 64"
+N 108'
+N 125"
+N 128
+0
+0.333
+0
+0
+0
+0.215
+0.102
+0.073
+0.051
+0.039
+0.037
+0.036
+1
+1
+0.333
+0. 1 1 1
+0
+0.504
+0.206
+0.146
+0.073
+0.054
+0.051
+0.051
+0
+0.333
+0
+0.333
+0.042
+0.215
+0.102
+0.074
+0.035
+0.028
+0.026
+0.026
+1
+1
+0.333
+0. 1 1 1
+0.083
+1
+d
+0.206
+0.146
+0.073
+0.039
+0.037
+0.036
+0
+0.333
+0
+0.333
+0.083
+0.215
+0.102
+0.073
+0.051
+0.039
+0.026
+0.025
+1
+1
+1
+0.333
+0
+0.504
+1 d
+0.249
+0.127
+0.048
+0.045
+0.062
+Number of neighbors of opposite type
+SQS-8
+Random
+6 + 1.8
+6+1 ~ 7
+3+ 0.5
+3 ~1.2
+1 1 ~ 5 + 1.1
+12 +24
+6.5 + 0.5
+6 ~ 1.7
+1 1 + 1.4
+12 ~ 2.4
+4+ 1
+4~ 1.4
+354
+ufcc-type unit cell.
+bcc-type unit cell.
+'Simple-cubic-type unit cell.
+Periodicity error: (Al, „,)=1, instead of zero.
+
+
+
+--- 第 3 页 ---
+VOLUME 65, NUMBER 3 PHYSICAL REVIEW LETTERS 16 JULY 1990
+SQS-4 is an Aq82 superlattice along [110],while SQS-6
+is an 2~8~2282 superlattice along [331]. Table I gives
+for completeness also SQS-2. Although N 2 is general-
+ly too small to represent a random alloy, we find that the
+CuAuI structure gives the best overall N=2 representa-
+tion for a random alloy. For each SQS we give in Table
+I the absolute value of the correlation functions,
+~ IIt,
+their departure from zero reflects errors relative to an
+infinite, perfectly random alloy. It is seen that SQS-8 is
+an excellent choice, equivalent to N ~ for the first-
+and second-neighbor correlation functions (as well as for
+sixth), to N 64 for third neighbors, etc. Its many-body
+correlation functions (note shown in Table I) also exhibit
+small values; e.g., the averaged value of H3 0,
+f14, 1 0, and II4 2 0.167. As a further measure of the
+accuracy with which the SQS's represent a perfectly ran-
+dom, infinite structure we give in Table I the number
+(0 ) of mth-order neighbors to a given site that are of
+the opposite type. In a perfectly random structure
+(0 ) D ~ (D~/2) 't . The SQS-8 reproduces this dis-
+tribution within the standard deviations.
+Unlike the SCPA or the VCA, the SQS exhibits a dis
+tribution of local environments of inequivalent A (or 8)
+atoms; hence, when treated by conventional band-
+structure methods one can simply incorporate in them
+realistic atomic relaxations and charge redistributions.
+Unlike cluster-expansion methods, '' [Eq. (2)l, the SQS
+approach is capable of depicting directly the electronic
+charge distribution in a random alloy and does not re-
+quire evaluation of pk from a truncated expansion. ''
+We have applied self-consistently the local-density for-
+malism, as implemented by the linear augmented-plane-
+wave' (LAPW) and nonlocal pseudopotential' band-
+structure methods to a range of pseudobinary &p, 58p 5C
+semiconductor SQS's. Here, the C atoms reside on the
+nominally common sublattice (so the actual number of
+atoms per cell is 2N); all A, 8, and C atomic positions
+are allowed to relax (without atomic interchanges) so as
+to minimize the total energy. A direct band-structure
+calculation of the total energy of a structurally relaxed
+SQS (taken with respect to the energies of the binary
+constituents AC and BC at equilibrium) approximates
+the excess energy AH(x —,
+'
+) of a random alloy. Such
+direct calculations for SQS-2 and SQS-4 are compared '
+in Table II to results obtained by the cluster expansion.
+The latter are given by our recent solutions of the
+three-dimensional fcc Ising model [Eq. (2)], using a con-
+verged set of up to fourth neighbor and four-body in-
+teractions [pp in Eq. (2)]. The interaction energies
+were obtained by fitting the separately calculated total
+energies of eight simple periodic structures. Table II
+shows that a single calculation even on SQS-4 repro-
+duces well, without resorting to statistical calculations,
+the corresponding results obtained from the full
+statistical-mechanics simulation: The latter agrees well
+with measured excess enthalpies. ' For GaPp5Asp5
+and Alp 5Gap 5As we have also calculated, using the pseu-
+dopotential method, ' the properties of SQS-2, -4, and
+-8. For GaPp5Asp5 we find the relaxed mixing enthal-
+pies dH 26. 1, 13.9, and 16.5 meV/(4 atoms) for N-2,
+4, and 8, respectively (the experimental value is
+—18~10 meV). For Alp5Gap5As we find 13.7, 10.5,
+and 10.5 meV/(4 atoms) showing even more rapid con-
+vergence.
+It is less obvious that band gaps would converge rapid-
+ly in Eq. (2). To examine this we have used the pseudo-
+potential calculated direct band gaps [Eg(S)] of Ns or-
+dered structures of Al„Ga As„+, obtaining through
+Eq. (2) the Nq expansion coefficient [pt, ] for P=Eg.
+These were then used to predict Eg for a diferent struc-
+TABLE II. Mixing enthalpies AH [in (I meV) j(4 atoms)) attd optical bowing b of the direct
+band gaps at I (in eV) as obtained by LAPW calculations on x —,
+' SQS's. For comparison,
+we also give eLH(x —,
+'
+) at T 800 K and at T ~ (random alloy) as calculated from an Is-
+ing model (Ref. 7), and the observed (expt. I) bowing parameters (Ref. 14). SQS-4 denotes
+results obtained after averaging the crystal-field split states at the valence-band maximum.
+~H —,
+Cupt
+SQS-2
+SQS-4
+Ising
+(T 800)
+(T-~)
+AlAs
+GaAs
+7.5
+1 1.5
+6.0
+6.5
+6.6
+GaSb
+GaAs
+132
+115
+80
+86
+91
+InAs
+GaAs
+108.5
+66.7
+47.3
+51.0
+58.8
+GaP
+InP
+155.4
+91.0
+73.0
+66.6
+81.5
+HgTe
+CdTe
+9.8
+12.1
+9.8
+8.2
+8.4
+Zn Te
+CdTe
+103.5
+54.2
+56. 1
+49.7
+55.3
+Hg Te
+Zn Te
+103.3
+42.5
+49. 1
+40.8
+47.6
+b(r)
+Cupt
+SQS-2
+SQS-4
+SQS-4
+Expt. I
+1.45
+0.61
+0.12
+0.10
+0.0-0.37
+3.25
+1.30
+0.98
+0.64
+1.0-1.2
+1.81
+0.66
+0.51
+0.43
+0.32-0.61
+1.82
+1.08
+0.80
+0.62
+0.65
+0.49
+0.09
+0.02
+0.01
+0.0-0.23
+0.65
+0.44
+0.40
+0.35
+0.26
+0.77
+0.45
+0.32
+0.20
+0.14
+355
+
+
+
+--- 第 4 页 ---
+VOLUME 65, NUMBER 3 PHYSICAL REVIEW LETTERS 16 JULY 1990
+ture (SQS-8). Using Ns =5, 6, and 7, we predict Eg
+(SQS-8) =1.42, 1.34, and 1.37 eV, respectively, showing
+rather rapid convergence, despite the fact that Eg(S) of
+the starting structures span a large range, between 0.7
+and 2.2 eV. A direct band calculation on SQS-8 gives
+Eg =1.38 ev, in excellent agreement with the cluster ex-
+pansion to sixth neighbors (1.37 eV). Additional conver-
+gence tests with N, =27, to be published separately,
+confirm that SQS-8 predicts the gaps for GaAIAs and
+GaAsP to within -0.05 eV or better. Given this suc-
+cess, we have calculated the relativistic band structures
+of the SQS's for the seven semiconductor alloys using the
+LAPW method. Table II gives the optical bowing
+coefficient b 4IEs( —,
+'
+) —Es(-2 )] of the direct alloy
+band gap at composition x —,
+'
+(where Eg denotes the
+concentration-weighted band gap of the binary constitu-
+ents; note that due to the difference taken in b, the
+local-density error cancels to first order). For compar-
+ison, we also give the calculated results for the CuPt
+structure and experimental data' for the disordered al-
+loy. Using the pseudopotential method, we find for
+GaPo sAso s the crystal-field-averaged bowing coefficient
+of the direct gap (in eV) of 0.14, 0.19, and 0.19 for
+SQS-2, -4, and -8, respectively (the experimental value'
+is 0.21 eV). We see that parameter-free self-consistent
+calculations on the SQS-N converges well and repro-
+duces the experimental trends. It is important to note
+that neglect of structural relaxation (as done in VCA
+and SCPA methods ) leads to huge errors in size-
+mismatched alloys, e.g., we find that b(SQS-2) for unre-
+laxed Ga2SbAs is 0.32 eV, instead of 1.30 eV for the re-
+laxed structure and that hH is 237 meV instead of 115
+meV. For GaAsP, AH is 60.2 meV instead of 16.5 meV.
+As a final demonstration of the usefulness of the SQS
+concept we quote its recent application' to the study of
+the optical properties of the Al~ —„Ga„As alloy. We
+have constructed a periodic model' of this alloy at the
+-50%-50% composition by populating randomly a
+2304-atom unit cell by Ga and Al (As resides on a
+separate sublattice). The energy levels were then calcu-
+lated within a tight-binding Hamiltonian whose matrix
+elements were fitted to the band structure of GaAs and
+A1As. A spectral weight analysis of the solutions of the
+2304-atom cell produced the alloy band gaps (given in
+eV, with respect to the valence-band maximum):
+2.215 (I )„), 2. 185 (L),), 2. 145 (Xl, ),
+2.645 (X3,) (2304atoms) .
+Using SQS-8 with just 16 atoms and the same tight-
+binding Hamiltonian yielded the following band gaps:
+2.217 (I , ), 2. 196 (L„), 2. 160 (Xl, ),
+2.640 (X3,) (16atoms),
+i.e., within 0.015 eV of the 2304-atom/cell calculation.
+Notice that the band gap of AIGaAs2 strongly depends
+on its crystal structure (Table II); hence the success of
+the SQS is significant. This example illustrates the fact
+that the SQS is also useful in describing optical proper-
+ties near threshold although it has artificial long-range
+order.
+While the SQS idea was demonstrated to work only
+for semiconductor alloys, it can be easily generalized to
+other compositions or lattice types (bcc, diamondlike)
+and open the way for extending the application of first-
+principles electronic structure techniques to a variety of
+metal and semiconductor alloys.
+This work was supported by the Office of Energy
+Research, Materials Science Division, U.S. Department
+of Energy Grant No. AC02-77-CH00178.
+'See a recent review in Electronic Structure, Dynamics and
+Quantum Structural Properties of Condensed Platter, edited
+by J. T. Devereese and P. Van Camp, NATO Advanced Study
+Institutes, Ser. B, Vol. 121 (Plenum, New York, 1984).
+2See a recent review by M. Jaros, Rep. Prog. Phys. 48, 1091
+(1985).
+J. C. Mikkelsen and J. B. Boyce, Phys. Rev. Lett. 49, 1412
+(1982).
+4(a) A. Zunger and J. E. Jaffe, Phys. Rev. Lett. 51, 662
+(1983); (b) J. E. Bernard and A. Zunger, Phys. Rev. B 34,
+5992 (1986); (c) A. A. Mbaye, L. G. Ferreira, and A. Zunger,
+Phys. Rev. Lett. 58, 49 (1987); (d) A. Sher, M. van Shilf-
+gaarde, A. B. Chen, and W. Chen, Phys. Rev. B 36, 4279
+(1987).
+sK. Binder, Phys. Rev. Lett. 45, 811 (1980).
+L. C. Davis and H. Holloway, Solid State Commun. 64, 121
+(1987).
+7L. G. Ferreira, S.-H. Wei, and A. Zunger, Phys. Rev. B 40,
+3197 (1989); S.-H. Wei, L. G. Ferreira, and A. Zunger, Phys.
+Rev. B 41, 8240 (1990).
+sD. J. Chadi and M. L. Cohen, Phys. Rev. B 8, 5747 (1973).
+9R. Kikuchi, Phys. Rev. 81, 988 (1951}.
+'oJ. M. Sanchez, F. Ducastelle, and D. Gratias, Physica (Am-
+sterdam) 128A, 334 (1984).
+''J. W. D. Connolly and A. R. Williams, Phys. Rev. B 27,
+5169 (1983).
+' S.-H. Wei and H. Krakauer, Phys. Rev. Lett. 55, 1200
+(1985). We use two special k points.
+' J. Ihm, A. Zunger, and M. L. Cohen, J. Phys. C 12, 4409
+(1979);G. Kerker, J. Phys. C 13, L189 (1980). We use an en-
+ergy cutoff of El =15 Ry and the equivalent of 29 special k
+points in the irreducible Brillouin zone. The convergence error
+in hH is ( 5 meV/(4 atoms).
+'4Landolt-Bornstein: 1Vurnerical Data and Functional Rela-
+tionships in Science and Technology, edited by O. Madelung,
+M. Schulz, and H. Weiss (Springer-Verlag, Berlin, 1982),
+New Series Group 3, Vol. 17, Parts (a) and (b).
+'5K. C. Hass, L. C. Davis, and Alex Zunger, Phys. Rev. B (to
+be published).
+356
+
+
