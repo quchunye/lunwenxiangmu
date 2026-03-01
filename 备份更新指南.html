@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论文项目备份与更新指南</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .progress-bar {
+            background: #f0f0f0;
+            padding: 20px 40px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .progress-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        .step {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #666;
+            z-index: 3;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .step.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.2);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .step.completed {
+            background: #4caf50;
+            color: white;
+        }
+        .content { padding: 40px; }
+        .step-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .step-content.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .step-title {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .step-title::before {
+            content: attr(data-step);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+        .instruction {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .instruction h3 { color: #667eea; margin-bottom: 10px; }
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .code-block .comment { color: #75715e; }
+        .code-block .command { color: #66d9ef; }
+        .code-block .string { color: #e6db74; }
+        .code-block .success { color: #a6e22e; }
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: space-between;
+        }
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-prev { background: #e0e0e0; color: #666; }
+        .btn-prev:hover { background: #d0d0d0; }
+        .btn-next {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .btn-next:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .btn-check { background: #4caf50; color: white; }
+        .btn-check:hover { background: #45a049; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .checklist { list-style: none; margin: 20px 0; }
+        .checklist li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checklist li:hover {
+            background: #e8f4f8;
+            transform: translateX(5px);
+        }
+        .checklist input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .checklist li.checked {
+            background: #e8f5e9;
+            text-decoration: line-through;
+            color: #666;
+        }
+        .tip {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .warning {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .success-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .success-box h3 {
+            color: #4caf50;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .success-box p { font-size: 1.2em; color: #666; }
+        .file-tree {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', monospace;
+            margin: 15px 0;
+        }
+        .file-tree div {
+            padding: 5px 0;
+            border-left: 2px solid #667eea;
+            padding-left: 20px;
+        }
+        .navigation-hint {
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 论文项目备份与更新指南</h1>
+            <p>每次完成大型修改后的标准操作流程</p>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-steps">
+                <div class="progress-line" id="progressLine"></div>
+                <div class="step active" data-step="1" onclick="goToStep(1)">1</div>
+                <div class="step" data-step="2" onclick="goToStep(2)">2</div>
+                <div class="step" data-step="3" onclick="goToStep(3)">3</div>
+                <div class="step" data-step="4" onclick="goToStep(4)">4</div>
+                <div class="step" data-step="5" onclick="goToStep(5)">5</div>
+                <div class="step" data-step="6" onclick="goToStep(6)">6</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="step-content active" id="step1">
+                <h2 class="step-title" data-step="1">准备工作</h2>
+                <div class="instruction">
+                    <h3>📋 确认修改已完成</h3>
+                    <p>在开始备份之前，请确保您的大型修改已经完成并且代码可以正常运行。</p>
+                </div>
+                <ul class="checklist" id="checklist1">
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>所有代码修改已完成</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>代码已经过测试，可以正常运行</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已记录本次修改的主要内容</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>准备好提交信息（描述本次修改）</span></li>
+                </ul>
+                <div class="tip"><strong>💡 提示：</strong>建议您在开始之前先记录一下本次修改的主要内容，这样在提交时可以写一个清晰的提交信息。</div>
+                <div class="btn-container">
+                    <button class="btn btn-prev" disabled><span>⬅️</span> 上一步</button>
+                    <button class="btn btn-next" onclick="nextStep()"><span>下一步</span> ➡️</button>
+                </div>
+            </div>
+            <div class="step-content" id="step2">
+                <h2 class="step-title" data-step="2">本地测试与验证</h2>
+                <div class="instruction">
+                    <h3>🧪 运行测试确保代码正常</h3>
+                    <p>在提交之前，确保所有代码都能正常运行。</p>
+                </div>
+                <div class="code-block"><span class="comment"># 1. 切换到项目目录</span>
+<span class="command">cd</span> <span class="string">"D:\Trae CN\论文"</span>
+
+<span class="comment"># 2. 测试 Fortran 代码（如果有修改）</span>
+<span class="command">gfortran</span> src\fortran\your_code.f90 -o test.exe
+<span class="command">.\test.exe</span>
+
+<span class="comment"># 3. 测试 Python 代码（如果有修改）</span>
+<span class="command">python</span> src\python\your_script.py
+
+<span class="comment"># 4. 运行框架检查</span>
+<span class="command">.\check_framework.bat</span></div>
+                <ul class="checklist" id="checklist2">
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>Fortran 代码编译成功</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>Fortran 代码运行结果正确</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>Python 代码运行成功</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>框架检查通过</span></li>
+                </ul>
+                <div class="warning"><strong>⚠️ 注意：</strong>如果任何测试失败，请先修复问题再继续备份流程。</div>
+                <div class="btn-container">
+                    <button class="btn btn-prev" onclick="prevStep()"><span>⬅️</span> 上一步</button>
+                    <button class="btn btn-next" onclick="nextStep()"><span>下一步</span> ➡️</button>
+                </div>
+            </div>
+            <div class="step-content" id="step3">
+                <h2 class="step-title" data-step="3">Git 提交本地仓库</h2>
+                <div class="instruction">
+                    <h3>💾 将修改提交到本地 Git 仓库</h3>
+                    <p>使用 Git 记录您的修改，这是版本控制的重要步骤。</p>
+                </div>
+                <div class="code-block"><span class="comment"># 1. 查看当前状态（查看哪些文件被修改）</span>
+<span class="command">git status</span>
+
+<span class="comment"># 2. 添加所有修改的文件</span>
+<span class="command">git add .</span>
+
+<span class="comment"># 3. 查看添加的文件</span>
+<span class="command">git status</span>
+
+<span class="comment"># 4. 提交修改（替换下面的提交信息）</span>
+<span class="command">git commit -m</span> <span class="string">"feat: 添加您的修改描述"</span>
+
+<span class="comment"># 示例提交信息：</span>
+<span class="comment"># "feat: 实现不可约构型生成模块"</span>
+<span class="comment"># "fix: 修复超胞构建中的 bug"</span>
+<span class="comment"># "docs: 更新实验记录"</span></div>
+                <div class="file-tree">
+                    <strong>提交信息规范：</strong><br>
+                    <div>feat: 新功能</div>
+                    <div>fix: 修复 bug</div>
+                    <div>docs: 文档更新</div>
+                    <div>style: 代码格式（不影响代码运行）</div>
+                    <div>refactor: 重构</div>
+                    <div>test: 测试相关</div>
+                    <div>chore: 构建/工具配置</div>
+                </div>
+                <ul class="checklist" id="checklist3">
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已运行 git status 查看修改</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已运行 git add . 添加文件</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已运行 git commit -m "信息" 提交</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>提交成功，看到提交哈希值</span></li>
+                </ul>
+                <div class="tip"><strong>💡 提示：</strong>提交信息应该清晰描述本次修改的内容，方便日后查阅。</div>
+                <div class="btn-container">
+                    <button class="btn btn-prev" onclick="prevStep()"><span>⬅️</span> 上一步</button>
+                    <button class="btn btn-next" onclick="nextStep()"><span>下一步</span> ➡️</button>
+                </div>
+            </div>
+            <div class="step-content" id="step4">
+                <h2 class="step-title" data-step="4">创建本地时间戳备份</h2>
+                <div class="instruction">
+                    <h3>📦 运行自动备份脚本</h3>
+                    <p>创建带时间戳的本地备份，确保可以回退到当前状态。</p>
+                </div>
+                <div class="code-block"><span class="comment"># 1. 运行自动备份脚本</span>
+<span class="command">cd</span> <span class="string">"D:\Trae CN\论文"</span>
+<span class="command">python</span> scripts\backup\auto_backup.py
+
+<span class="comment"># 或者使用批处理</span>
+<span class="command">.\scripts\backup\run_backup.bat</span>
+
+<span class="success"># 输出示例：</span>
+<span class="success"># ✓ 目录：src</span>
+<span class="success"># ✓ 目录：docs</span>
+<span class="success"># ✓ 文件：README.md</span>
+<span class="success"># 备份完成：backups\timestamped\backup_20260301_203000</span></div>
+                <ul class="checklist" id="checklist4">
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已运行备份脚本</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>看到"备份完成"提示</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>检查 backups/timestamped/ 下有新的备份文件夹</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>备份包含了所有重要文件</span></li>
+                </ul>
+                <div class="tip"><strong>💡 提示：</strong>备份脚本会自动保留最近 30 天的备份，旧备份会被清理。</div>
+                <div class="btn-container">
+                    <button class="btn btn-prev" onclick="prevStep()"><span>⬅️</span> 上一步</button>
+                    <button class="btn btn-next" onclick="nextStep()"><span>下一步</span> ➡️</button>
+                </div>
+            </div>
+            <div class="step-content" id="step5">
+                <h2 class="step-title" data-step="5">推送到 GitHub 云端</h2>
+                <div class="instruction">
+                    <h3>☁️ 将代码上传到 GitHub 仓库</h3>
+                    <p>将本地提交推送到远程仓库，实现云端备份和版本管理。</p>
+                </div>
+                <div class="code-block"><span class="comment"># 1. 确保在项目目录</span>
+<span class="command">cd</span> <span class="string">"D:\Trae CN\论文"</span>
+
+<span class="comment"># 2. 查看远程仓库配置</span>
+<span class="command">git remote -v</span>
+<span class="comment"># 应该显示：origin https://github.com/quchunye/lunwenxiangmu.git</span>
+
+<span class="comment"># 3. 推送到 GitHub</span>
+<span class="command">git push</span>
+
+<span class="comment"># 首次推送可能需要认证：</span>
+<span class="comment"># Username: quchunye</span>
+<span class="comment"># Password: 输入您的密码或 Token</span>
+
+<span class="success"># 推送成功示例：</span>
+<span class="success"># Enumerating objects: 10, done.</span>
+<span class="success"># To https://github.com/quchunye/lunwenxiangmu.git</span>
+<span class="success">#  * [new branch]      master -> master</span></div>
+                <ul class="checklist" id="checklist5">
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已确认远程仓库配置正确</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已运行 git push</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>推送成功，看到成功信息</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>访问 GitHub 仓库页面确认代码已更新</span></li>
+                </ul>
+                <div class="tip"><strong>💡 提示：</strong>访问 <a href="https://github.com/quchunye/lunwenxiangmu" target="_blank">https://github.com/quchunye/lunwenxiangmu</a> 查看您的代码是否已更新。</div>
+                <div class="btn-container">
+                    <button class="btn btn-prev" onclick="prevStep()"><span>⬅️</span> 上一步</button>
+                    <button class="btn btn-next" onclick="nextStep()"><span>下一步</span> ➡️</button>
+                </div>
+            </div>
+            <div class="step-content" id="step6">
+                <h2 class="step-title" data-step="6">完成确认</h2>
+                <div class="success-box">
+                    <h3>🎉 恭喜！备份完成</h3>
+                    <p>您已成功完成所有备份和更新步骤</p>
+                </div>
+                <div class="instruction">
+                    <h3>✅ 最终检查清单</h3>
+                    <p>确认所有步骤都已完成。</p>
+                </div>
+                <ul class="checklist" id="checklist6">
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>代码修改已完成并测试通过</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已提交到本地 Git 仓库</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已创建本地时间戳备份</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已推送到 GitHub 仓库</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>GitHub 仓库页面显示最新代码</span></li>
+                    <li onclick="toggleCheck(this)"><input type="checkbox"><span>已记录实验日志（如适用）</span></li>
+                </ul>
+                <div class="code-block"><span class="comment"># 验证命令（可选）</span>
+
+<span class="comment"># 1. 查看最近的提交</span>
+<span class="command">git log --oneline -5</span>
+
+<span class="comment"># 2. 查看 Git 状态</span>
+<span class="command">git status</span>
+<span class="comment"># 应该显示：nothing to commit, working tree clean</span>
+
+<span class="comment"># 3. 查看远程分支</span>
+<span class="command">git branch -a</span></div>
+                <div class="tip">
+                    <strong>📝 下一步建议：</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>更新实验记录文档</li>
+                        <li>继续下一阶段的开发</li>
+                        <li>定期运行备份脚本（建议每天）</li>
+                    </ul>
+                </div>
+                <div class="navigation-hint">您可以使用上方的步骤指示器返回查看任何步骤</div>
+                <div class="btn-container">
+                    <button class="btn btn-prev" onclick="prevStep()"><span>⬅️</span> 上一步</button>
+                    <button class="btn btn-check" onclick="restart()"><span>🔄</span> 开始新的备份流程</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentStep = 1;
+        const totalSteps = 6;
+        function updateProgress() {
+            const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            document.getElementById('progressLine').style.width = progress + '%';
+            document.querySelectorAll('.step').forEach((step, index) => {
+                const stepNum = index + 1;
+                step.classList.remove('active', 'completed');
+                if (stepNum === currentStep) {
+                    step.classList.add('active');
+                } else if (stepNum < currentStep) {
+                    step.classList.add('completed');
+                    step.innerHTML = '✓';
+                } else {
+                    step.innerHTML = stepNum;
+                }
+            });
+            document.querySelectorAll('.step-content').forEach((content, index) => {
+                content.classList.remove('active');
+                if (index + 1 === currentStep) {
+                    content.classList.add('active');
+                }
+            });
+        }
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateProgress();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateProgress();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+        function goToStep(step) {
+            currentStep = step;
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function toggleCheck(li) {
+            li.classList.toggle('checked');
+            const checkbox = li.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+        }
+        function restart() {
+            currentStep = 1;
+            document.querySelectorAll('.checklist li').forEach(li => {
+                li.classList.remove('checked');
+                const checkbox = li.querySelector('input[type="checkbox"]');
+                checkbox.checked = false;
+            });
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        updateProgress();
+    </script>
+</body>
+</html>
