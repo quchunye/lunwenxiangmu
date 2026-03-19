@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Fortran compilation
+*.o
+*.mod
+*.a
+*.so
+*.dll
+*.exe
+
+# Large binary files
+*.dll
+*.exe
+*.pdf
+*.zip
+*.7z
+*.rar
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup directories
+backups/
+
+# Specific large files
+github/bin/*.dll
+github/bin/*.exe
+github/bin/disorder
+github/bin/supercell
+github/doc/*.pdf
+github/examples/*/test
+
+# Test run outputs
+github/test_run/*.out
+github/test_run/*.CFG*
