@@ -1,0 +1,8 @@
+&input
+  nsub = 2
+  subs = 1, 1
+  symb = 'Fe', 'Ni'
+  site = 1
+  prec = 1D-5
+  lcfg = .true.
+/

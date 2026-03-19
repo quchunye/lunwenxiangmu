@@ -1,0 +1,39 @@
+FC = C:\msys64\mingw64\bin\gfortran.exe
+
+all: disorder supercell
+
+disorder: disorder.f90 stdout.o functions.o structure.o symmetry.o \
+          groups.o progress.o configurations.o outfiles.o
+	$(FC) -o disorder.exe disorder.f90 *.o
+	cp disorder.exe ../bin/
+
+supercell: supercell.f90 structure.o functions.o
+	$(FC) -o supercell.exe supercell.f90 structure.o functions.o
+	cp supercell.exe ../bin/
+
+functions.o: functions.f90
+	$(FC) -c functions.f90
+
+structure.o: structure.f90 functions.o
+	$(FC) -c structure.f90
+
+symmetry.o: symmetry.f90 functions.o stdout.o
+	$(FC) -c symmetry.f90
+
+groups.o: groups.f90 structure.o
+	$(FC) -c groups.f90
+
+progress.o: progress.f90
+	$(FC) -c progress.f90
+
+configurations.o: configurations.f90 progress.o stdout.o functions.o
+	$(FC) -c configurations.f90
+
+outfiles.o: outfiles.f90 functions.o
+	$(FC) -c outfiles.f90
+
+stdout.o: stdout.f90 functions.o
+	$(FC) -c stdout.f90
+
+clean:
+	del *.mod *.o disorder.exe supercell.exe 2>nul

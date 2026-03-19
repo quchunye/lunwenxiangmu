@@ -1,0 +1,44 @@
+[
+  {
+    "source": "D:\\download\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.caj",
+    "target": "D:/Trae CN/论文/文献\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.pdf",
+    "success": true,
+    "error": "",
+    "time": "2026-03-13 16:35:50"
+  },
+  {
+    "source": "D:\\download\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.caj",
+    "target": "D:/Trae CN/论文/文献\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.pdf",
+    "success": false,
+    "error": "转换失败: mutool 未找到，请确保已安装 MuPDF 或 PyMuPDF",
+    "time": "2026-03-13 14:59:21"
+  },
+  {
+    "source": "D:\\download\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.caj",
+    "target": "D:/Trae CN/论文/文献\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.pdf",
+    "success": false,
+    "error": "转换失败: mutool 未找到，请确保已安装 MuPDF 或 PyMuPDF",
+    "time": "2026-03-13 14:56:45"
+  },
+  {
+    "source": "D:\\download\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.caj",
+    "target": "D:\\download\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.pdf",
+    "success": false,
+    "error": "所有转换方式均失败",
+    "time": "2026-03-13 14:09:44"
+  },
+  {
+    "source": "D:\\download\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.caj",
+    "target": "D:\\download\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.pdf",
+    "success": false,
+    "error": "所有转换方式均失败",
+    "time": "2026-03-13 14:07:52"
+  },
+  {
+    "source": "D:\\download\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.caj",
+    "target": "D:/Trae CN/论文/文献\\_AI嵌入对平台供应链信息传导效率的影响研究——基于网络结构中介与SEM-fsQCA的混合方法.pdf",
+    "success": false,
+    "error": "C:\\Users\\曲\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe: No module named caj2pdf\n",
+    "time": "2026-03-13 13:55:17"
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "mcpServers": {
+    "印象笔记MCP": {
+      "command": "npx",
+      "args": [
+        "yxbj-mcp"
+      ],
+      "env": {
+        "YINXIANG_AUTH_TOKEN": "S=s56:U=3512e36:E=1a40200875e:C=19caa4f59c8:P=1:A=yinxiang-mcp:V=2:B=ac9e7070-30cd-449f-bf80-9efdc3f36745:H=4e6ba6d3ee02023fc2c04414c33ce42"
+      },
+      "fromGalleryId": "byted-mcp-volcengine.yxbj_mcp"
+    },
+    "aindreyway": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@aindreyway/mcp-codex-keeper@latest"
+      ],
+      "env": {
+        "npm_config_cache_max": "1024000000",
+        "NODE_OPTIONS": "--max-old-space-size=256"
+      },
+      "fromGalleryId": "byted-mcp-volcengine.aindreyway"
+    },
+    "blender": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "\"D:\\Trae CN\\论文\\.venv\\Scripts\\python.exe\" \"d:\\Trae CN\\论文\\run_blender_mcp.py\""
+      ]
+    },
+    "web research": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mzxrai/mcp-webresearch@latest"
+      ],
+      "env": {},
+      "fromGalleryId": "byted-mcp-volcengine.web_research"
+    },
+    "duckduckgo": {
+      "command": "uvx",
+      "args": [
+        "duckduckgo-mcp-server"
+      ],
+      "env": {},
+      "fromGalleryId": "byted-mcp-volcengine.duckduckgo"
+    },
+    "pdf-reader-mcp": {
+      "command": "npx",
+      "args": [
+        "@sylphlab/pdf-reader-mcp"
+      ],
+      "env": {},
+      "fromGalleryId": "byted-mcp-volcengine.pdf-reader-mcp"
+    },
+    "DesktopCommander": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@wonderwhy-er/desktop-commander"
+      ],
+      "env": {},
+      "fromGalleryId": "byted-mcp-volcengine.desktopcommander"
+    },
+    "web-reader": {
+      "url": "https://open.bigmodel.cn/api/mcp/web_reader/mcp",
+      "headers": {
+        "Authorization": "913d38437e65412d91a160b5c4e7843a.050RZclHrO9KfcMy"
+      }
+    },
+    "web-search-prime": {
+      "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
+      "headers": {
+        "Authorization": "913d38437e65412d91a160b5c4e7843a.050RZclHrO9KfcMy"
+      }
+    },
+    "zread": {
+      "url": "https://open.bigmodel.cn/api/mcp/zread/mcp",
+      "headers": {
+        "Authorization": "913d38437e65412d91a160b5c4e7843a.050RZclHrO9KfcMy"
+      }
+    },
+    "firecrawl-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "firecrawl-mcp"
+      ],
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-3f997fc9b88d4a21b40c2e2b1a098ebf"
+      }
+    }
+  }
+}

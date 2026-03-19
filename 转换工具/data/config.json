@@ -1,0 +1,8 @@
+{
+  "output_dir": "D:/Trae CN/论文/文献",
+  "auto_open": true,
+  "keep_original": true,
+  "caj2pdf_dir": "D:\\download\\caj2pdf-master\\caj2pdf-master",
+  "mutool_path": "D:\\Trae CN\\论文\\转换工具\\mutool.bat",
+  "use_pymupdf": true
+}

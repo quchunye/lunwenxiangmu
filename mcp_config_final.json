@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "印象笔记MCP": {
+      "command": "npx",
+      "args": [
+        "yxbj-mcp"
+      ],
+      "env": {
+        "YINXIANG_AUTH_TOKEN": "S=s56:U=3512e36:E=1a40200875e:C=19caa4f59c8:P=1:A=yinxiang-mcp:V=2:B=ac9e7070-30cd-449f-bf80-9efdc3f36745:H=4e6ba6d3ee02023fc2c04414c33ce42"
+      },
+      "fromGalleryId": "byted-mcp-volcengine.yxbj_mcp"
+    },
+    "aindreyway": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@aindreyway/mcp-codex-keeper@latest"
+      ],
+      "env": {
+        "npm_config_cache_max": "1024000000",
+        "NODE_OPTIONS": "--max-old-space-size=256"
+      },
+      "fromGalleryId": "byted-mcp-volcengine.aindreyway"
+    },
+    "blender": {
+      "command": "D:\\Trae CN\\论文\\.venv\\Scripts\\python.exe",
+      "args": [
+        "d:\\Trae CN\\论文\\run_blender_mcp.py"
+      ]
+    }
+  }
+}

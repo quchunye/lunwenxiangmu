@@ -1,0 +1,73 @@
+# CAJ转PDF转换工具 使用说明
+
+## 安装步骤
+
+### 1. 安装Python
+确保已安装 Python 3.8-3.12（推荐 3.10 或 3.11）
+下载地址: https://www.python.org/downloads/
+
+### 2. 安装依赖
+打开命令行，进入工具目录，运行：
+```
+pip install PyPDF2 imagesize Pillow pymupdf
+```
+
+或使用国内镜像加速：
+```
+pip install PyPDF2 imagesize Pillow pymupdf -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+## 使用方法
+
+### 方法1：双击运行
+双击 `run.bat` 文件即可启动图形界面
+
+### 方法2：命令行运行
+```
+python caj_converter.py
+```
+
+### 方法3：命令行直接转换
+```
+python caj_converter.py "你的文件.caj"
+```
+
+## 支持的格式
+- CAJ 格式：完全支持
+- HN 格式：部分支持
+- KDH 格式：支持
+
+## 注意事项
+1. 部分CAJ文件可能无法转换（显示"Unknown file type"）
+2. 大文件转换可能需要较长时间
+3. 转换后的PDF文件会保存在CAJ文件同目录下
+
+## 目录说明
+```
+CAJ转PDF工具/
+├── caj_converter.py    # 主程序（双击运行）
+├── run.bat             # Windows启动脚本
+├── core/               # 核心模块（勿动）
+│   ├── cajparser.py
+│   ├── utils.py
+│   ├── pdfwutils.py
+│   ├── HNParsePage.py
+│   ├── jbig2dec.py
+│   ├── jbigdec.py
+│   ├── caj2pdf
+│   ├── requirements.txt
+│   └── lib/
+└── data/               # 数据文件
+    └── config.json
+```
+
+## 常见问题
+
+Q: 提示"Unknown file type"
+A: 该CAJ文件格式暂不支持转换
+
+Q: 提示缺少模块
+A: 运行 `pip install 模块名` 安装
+
+Q: 转换后PDF打不开
+A: 可能是文件损坏或格式特殊，尝试用其他阅读器打开
