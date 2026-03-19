@@ -162,31 +162,13 @@ def git_backup():
         print(f"[警告] 推送失败：{output}")
         return False
 
-def cleanup_old_backups(keep_days=30):
-    """清理旧备份（保留最近 30 天）"""
+def cleanup_old_backups(keep_days=None):
+    """清理旧备份（已禁用）"""
     print("\n" + "=" * 60)
-    print(f"清理旧备份 (保留最近{keep_days}天)")
+    print("清理旧备份功能已禁用")
     print("=" * 60)
-    
-    cutoff_date = datetime.datetime.now() - datetime.timedelta(days=keep_days)
-    removed_count = 0
-    
-    if os.path.exists(TIMESTAMP_DIR):
-        for folder in os.listdir(TIMESTAMP_DIR):
-            folder_path = os.path.join(TIMESTAMP_DIR, folder)
-            if os.path.isdir(folder_path):
-                try:
-                    date_str = folder.replace('backup_', '')
-                    folder_date = datetime.datetime.strptime(date_str, '%Y%m%d_%H%M%S')
-                    
-                    if folder_date < cutoff_date:
-                        shutil.rmtree(folder_path)
-                        print(f"✓ 删除旧备份：{folder}")
-                        removed_count += 1
-                except Exception as e:
-                    print(f"⚠ 跳过 {folder}: {e}")
-    
-    print(f"共删除 {removed_count} 个旧备份")
+    print("所有历史备份将被永久保留")
+    print("提示：如需清理，请手动删除 backups/timestamped/ 目录中的旧备份")
 
 def main():
     """主函数"""
