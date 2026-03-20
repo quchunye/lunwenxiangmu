@@ -1,5 +1,4 @@
 module symmetry
-  use stdout
   use functions
   implicit none
 contains
@@ -7,10 +6,10 @@ contains
 subroutine eqamatrix(eqamat,spgmat,a,x,natom,symprec,site)
   implicit none
   integer(2),allocatable :: eqamat(:,:)
-  real(8) :: a(3,3),x(:,:),symprec
+  real(8) :: a(3,3),x(:,:),symprec,time0,time1
   integer(2) :: natom(:),satom
   integer(1) :: site
-  integer(2) :: i,j,n,nr,nt,no,na,s
+  integer(2) :: i,j,n,nr,nt,no,na,s,conf(8)
   integer(2),allocatable :: atom(:)
   integer(1),allocatable :: rot(:,:,:)
   integer(2),allocatable :: eqamat1(:,:)
@@ -19,6 +18,7 @@ subroutine eqamatrix(eqamat,spgmat,a,x,natom,symprec,site)
   real(8),allocatable :: tra1(:,:)
   real(8),allocatable :: tra2(:,:)
   real(8),allocatable :: spgmat(:,:,:)
+  logical(1),allocatable :: occ(:)
   character(len=20) :: cls,sys
 
   call rotation(eqamat1,rot,tra1,a,x,natom,symprec)
@@ -29,7 +29,6 @@ subroutine eqamatrix(eqamat,spgmat,a,x,natom,symprec,site)
   nt=size(eqamat2,2)
   satom=sum(natom)
   no=nr*nt
-  call stdout_2(no,nr,nt,cls,sys)
   allocate(eqamat3(satom,no))
   n=0
   do i=1,nr
@@ -76,7 +75,7 @@ subroutine rotation(eqamat,rot,tra,a,x,natom,symprec)
   integer(2),allocatable :: eqamat(:,:)
   real(8) :: a(3,3),x(:,:),symprec
   integer(2) :: natom(:),satom
-  real(8) :: G(3,3),x_t(3),T(3),dx(3),c(3)
+  real(8) :: G(3,3),x_t(3),T(3),dx(3),c(3),time31,time30
   real(8),allocatable :: tra(:,:),tra_t(:,:)
   integer(1) :: W11,W12,W13,W21,W22,W23,W31,W32,W33
   integer(1) :: W(3,3),rot_t(3,3,48)
@@ -211,6 +210,7 @@ end function metric
 end subroutine rotation
 
 subroutine translation(eqamat,tra,a,x,natom,symprec)
+  implicit none
   integer(2),allocatable :: eqamat(:,:)
   real(8) :: a(3,3),x(:,:),symprec
   integer(2) :: natom(:),satom
@@ -461,7 +461,7 @@ subroutine pointgroup(rot,cls,sys)
       sys='Cubic'
       cls='O_h (m-3m)'
     case default
-      call stderr("Cannot find a point group, try modifying PREC tag !")
+      write(*,*) "Cannot find a point group, try modifying PREC tag !"
   end select
   return
 end subroutine pointgroup
