@@ -1,0 +1,5 @@
+/assets/*
+  Cache-Control: public, max-age=0, s-maxage=2592000
+
+/
+  Cache-Control: no-cache

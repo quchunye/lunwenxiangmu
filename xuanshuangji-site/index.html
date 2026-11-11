@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#04070e">
+<meta name="description" content="玄霜纪 · 上海玄霜纪智能科技有限公司 — 我们在霜雪之下，孕育下一纪元的智能。">
+<title>玄霜纪 · XUANSHUANGJI INTELLIGENCE</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="玄霜纪 · XUANSHUANGJI INTELLIGENCE">
+<meta property="og:description" content="玄霜纪 · 上海玄霜纪智能科技有限公司 — 我们在霜雪之下，孕育下一纪元的智能。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuanshuangji.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://xuanshuangji.com/og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238fd8ff' stroke-width='1.5'%3E%3Cpath d='M12 2v20M4 6l16 12M20 6L4 18M12 5l2.5-2M12 5L9.5 3M12 19l2.5 2M12 19L9.5 21M5.5 11.8L2 12.5M5.5 11.8l.8-3.6M18.5 11.8L22 12.5M18.5 11.8l-.8-3.6M5.5 16.2L2 15.5M5.5 16.2l.8 3.6M18.5 16.2L22 15.5M18.5 16.2l-.8 3.6'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://xuanshuangji.com/">
+<meta property="og:site_name" content="玄霜纪">
+
+<!-- 结构化数据：主体锚点（供搜索引擎与 AI 抓取器读取，字段值与营业执照一致） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://xuanshuangji.com/#organization",
+      "name": "上海玄霜纪智能科技有限公司",
+      "alternateName": ["玄霜纪", "XUANSHUANGJI INTELLIGENCE", "盘纪"],
+      "url": "https://xuanshuangji.com/",
+      "logo": "https://xuanshuangji.com/og-image.jpg",
+      "email": "contact@xuanshuangji.com",
+      "foundingDate": "2026-10-14",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "USCC",
+        "name": "统一社会信用代码",
+        "value": "91310115MAKQDXHU15"
+      },
+      "taxID": "91310115MAKQDXHU15",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "中国（上海）自由贸易试验区张杨路828-838号26楼E、F室",
+        "addressLocality": "上海市浦东新区",
+        "addressRegion": "上海市",
+        "addressCountry": "CN"
+      },
+      "brand": [
+        { "@type": "Brand", "name": "盘纪" },
+        { "@type": "Brand", "name": "管住手了吗" }
+      ],
+      "owns": {
+        "@type": "SoftwareApplication",
+        "@id": "https://h5.xuanshuangji.com/#app",
+        "name": "管住手了吗",
+        "alternateName": "盘纪",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web, Android",
+        "url": "https://h5.xuanshuangji.com/",
+        "publisher": { "@id": "https://xuanshuangji.com/#organization" }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://xuanshuangji.com/#website",
+      "url": "https://xuanshuangji.com/",
+      "name": "玄霜纪 · XUANSHUANGJI INTELLIGENCE",
+      "inLanguage": "zh-CN",
+      "publisher": { "@id": "https://xuanshuangji.com/#organization" }
+    }
+  ]
+}
+</script>
+
+<style>
+  /* ============ 基础 ============ */
+  :root{
+    --bg0:#04070e;
+    --bg1:#081020;
+    --ink:#eaf4ff;
+    --ink-dim:rgba(214,233,252,.64);
+    --ink-faint:rgba(214,233,252,.38);
+    --frost:#8fd8ff;
+    --frost-hi:#d6f1ff;
+    --cyan:#6ee0ff;
+    --violet:#8f9fff;
+    --line:rgba(150,210,255,.14);
+    --glass:rgba(120,180,240,.055);
+    --serif:"Source Han Serif SC","Noto Serif SC","Songti SC","STSong","SimSun",serif;
+    --sans:-apple-system,"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",system-ui,sans-serif;
+    --mono:"SF Mono","Cascadia Code","JetBrains Mono",Consolas,"Courier New",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg0);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.75;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(110,224,255,.28);color:var(--frost-hi)}
+  ::-webkit-scrollbar{width:9px}
+  ::-webkit-scrollbar-track{background:var(--bg0)}
+  ::-webkit-scrollbar-thumb{background:rgba(143,216,255,.18);border-radius:8px}
+  ::-webkit-scrollbar-thumb:hover{background:rgba(143,216,255,.32)}
+  a{color:inherit;text-decoration:none}
+
+  /* ============ 背景层：极光 + 噪点 ============ */
+  .aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;background:
+    radial-gradient(1200px 800px at 80% -10%,#0a1830 0%,transparent 60%),
+    radial-gradient(1000px 700px at 10% 110%,#07142a 0%,transparent 60%),
+    var(--bg0)}
+  .blob{position:absolute;border-radius:50%;filter:blur(72px);opacity:.32;mix-blend-mode:screen;will-change:transform}
+  .blob-1{width:46vmax;height:46vmax;left:-15vmax;top:-16vmax;background:radial-gradient(circle,rgba(60,150,255,.5),transparent 65%);animation:drift1 22s ease-in-out infinite alternate}
+  .blob-2{width:40vmax;height:40vmax;right:-13vmax;bottom:-15vmax;background:radial-gradient(circle,rgba(110,90,255,.4),transparent 65%);animation:drift2 27s ease-in-out infinite alternate}
+  .blob-3{width:28vmax;height:28vmax;left:36vw;top:32vh;background:radial-gradient(circle,rgba(60,220,255,.28),transparent 65%);animation:drift3 19s ease-in-out infinite alternate}
+  @keyframes drift1{to{transform:translate(9vmax,7vmax) scale(1.12)}}
+  @keyframes drift2{to{transform:translate(-8vmax,-6vmax) scale(1.08)}}
+  @keyframes drift3{to{transform:translate(-10vmax,6vmax) scale(.92)}}
+  .grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  #frost{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+  /* ============ 预加载（霜凝退场） ============ */
+  #loader{position:fixed;inset:0;z-index:100;background:radial-gradient(900px 600px at 50% 42%,#071224,var(--bg0) 75%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;
+    clip-path:circle(141% at 50% 47%)}
+  #loader.done{pointer-events:none;animation:loaderMelt .85s cubic-bezier(.6,.05,.3,1) forwards}
+  #loader.done .chars span{animation:charOut .5s ease forwards}
+  #loader.done .loader-line{animation:lineOut .35s ease forwards}
+  @keyframes loaderMelt{to{clip-path:circle(0% at 50% 47%);opacity:.4}}
+  @keyframes charOut{to{opacity:0;transform:translateY(-22px);filter:blur(12px)}}
+  @keyframes lineOut{to{opacity:0}}
+  #loader .chars{display:flex;gap:.35em;font-family:var(--serif);font-size:clamp(38px,7vw,64px);letter-spacing:.1em}
+  #loader .chars span{opacity:0;filter:blur(10px);transform:translateY(14px);animation:charIn .8s cubic-bezier(.2,.7,.2,1) forwards}
+  #loader .chars span:nth-child(2){animation-delay:.28s}
+  #loader .chars span:nth-child(3){animation-delay:.56s}
+  @keyframes charIn{to{opacity:1;filter:blur(0);transform:none}}
+  #loader .loader-line{width:0;height:1px;background:linear-gradient(90deg,transparent,rgba(160,220,255,.85),transparent);
+    animation:lineGrow .8s cubic-bezier(.2,.7,.2,1) 1.15s forwards}
+  @keyframes lineGrow{to{width:min(220px,52vw)}}
+  #loader .m-note{font-family:var(--mono);font-size:10px;letter-spacing:.42em;color:var(--ink-faint);opacity:0;animation:fadeIn .6s ease 1.25s forwards}
+  @keyframes fadeIn{to{opacity:1}}
+
+  /* ============ 导航 ============ */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:0 clamp(18px,4vw,44px);
+    display:flex;align-items:center;justify-content:space-between;height:66px;
+    transition:background .4s,border-color .4s,backdrop-filter .4s,transform .55s cubic-bezier(.2,.7,.2,1)}
+  nav.hide{transform:translateY(-102%)}
+  nav.scrolled{background:rgba(5,9,18,.62);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:19px;letter-spacing:.14em}
+  .brand svg{width:20px;height:20px;color:var(--frost)}
+  .nav-links{display:flex;gap:clamp(16px,3vw,34px);font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--ink-dim)}
+  .nav-links a{position:relative;padding:4px 0;transition:color .3s}
+  .nav-links a:hover{color:var(--frost-hi)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--frost);transition:width .3s}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{font-family:var(--mono);font-size:12px;letter-spacing:.16em;padding:9px 20px;border:1px solid rgba(143,216,255,.35);border-radius:100px;color:var(--frost);background:rgba(143,216,255,.06);cursor:pointer;transition:.35s}
+  .nav-cta:hover{background:rgba(143,216,255,.16);box-shadow:0 0 24px rgba(110,224,255,.25)}
+  @media(max-width:640px){.nav-links{display:none}}
+
+  /* ============ 通用版式 ============ */
+  main{position:relative;z-index:1}
+  section{padding:clamp(90px,14vh,150px) clamp(20px,6vw,72px);max-width:1180px;margin:0 auto;position:relative}
+  .sec-label{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--ink-faint);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+  .sec-label::after{content:"";height:1px;flex:0 0 clamp(40px,8vw,90px);background:linear-gradient(90deg,rgba(143,216,255,.4),transparent)}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5.4vw,58px);letter-spacing:.06em;line-height:1.2}
+  h2 .en{display:block;font-family:var(--mono);font-weight:400;font-size:clamp(12px,1.4vw,14px);letter-spacing:.34em;color:var(--ink-faint);margin-top:12px;text-transform:uppercase}
+  .sec-sub{color:var(--ink-dim);margin-top:22px;max-width:560px;font-size:clamp(14px,1.6vw,16px)}
+  .divider{display:flex;align-items:center;gap:16px;max-width:1180px;margin:0 auto;padding:0 clamp(20px,6vw,72px)}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+  .divider svg{width:12px;height:12px;color:rgba(143,216,255,.4);flex:none}
+
+  /* 渐显 */
+  .reveal{opacity:0;transform:translateY(30px);filter:blur(8px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
+  .reveal.in{opacity:1;transform:none;filter:blur(0)}
+
+  /* ============ 01 序 · Hero ============ */
+  #hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;max-width:1180px;padding-top:96px;padding-bottom:60px}
+  .hero-eyebrow{font-family:var(--mono);font-size:clamp(10px,1.3vw,12px);letter-spacing:.42em;color:var(--ink-faint);margin-bottom:30px}
+  .hero-eyebrow b{color:rgba(143,216,255,.75);font-weight:400}
+  .hero-title{font-family:var(--serif);font-size:clamp(72px,17vw,190px);line-height:1.04;letter-spacing:.06em;font-weight:700;
+    background:linear-gradient(168deg,#f6fbff 8%,#cfeeff 38%,#8fd8ff 62%,#5c9fe0 96%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 42px rgba(110,190,255,.22))}
+  .hero-title span{display:inline-block;opacity:0;transform:translateY(.3em);filter:blur(12px);
+    transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
+  .hero-title.in span{opacity:1;transform:none;filter:blur(0)}
+  .hero-title span:nth-child(2){transition-delay:.1s}
+  .hero-title span:nth-child(3){transition-delay:.2s}
+  .hero-slogan{margin-top:26px;font-family:var(--serif);font-size:clamp(19px,3vw,30px);letter-spacing:.58em;color:var(--frost-hi);
+    transition:letter-spacing 1s cubic-bezier(.2,.7,.2,1),opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s}
+  .hero-slogan.in{letter-spacing:.34em}
+  .hero-slogan i{font-style:normal;color:var(--ink-faint);margin:0 .4em;font-size:.72em;vertical-align:middle}
+  .hero-sub{margin-top:20px;color:var(--ink-dim);font-size:clamp(14px,1.6vw,16px);max-width:520px}
+  .hero-en{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--ink-faint);text-transform:uppercase}
+  .hero-status{margin-top:34px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:rgba(143,216,255,.55);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .hero-status .dot{width:6px;height:6px;border-radius:50%;background:#6ee0ff;box-shadow:0 0 10px #6ee0ff;animation:pulse 2.2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .hero-status .caret{display:inline-block;width:7px;height:13px;background:rgba(143,216,255,.7);animation:caret 1.1s steps(1) infinite;vertical-align:-2px}
+  @keyframes caret{50%{opacity:0}}
+  .hero-ctas{margin-top:46px;display:flex;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-size:14px;letter-spacing:.12em;
+    padding:15px 34px;border-radius:100px;cursor:pointer;border:1px solid transparent;transition:.35s cubic-bezier(.2,.7,.2,1);user-select:none}
+  .btn svg{width:15px;height:15px}
+  .btn-primary{color:#04121f;font-weight:600;
+    background:linear-gradient(120deg,#bfeaff,#7dd4ff 45%,#9f8cff);
+    box-shadow:0 8px 34px rgba(110,200,255,.35)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(125,212,255,.5)}
+  .btn-ghost{color:var(--frost-hi);border-color:rgba(143,216,255,.32);background:rgba(143,216,255,.05);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .btn-ghost:hover{transform:translateY(-3px);background:rgba(143,216,255,.13);border-color:rgba(143,216,255,.6);box-shadow:0 10px 34px rgba(110,224,255,.2)}
+  .hero-side{position:absolute;right:clamp(14px,4vw,60px);top:50%;transform:translateY(-50%);
+    writing-mode:vertical-rl;font-family:var(--serif);font-size:clamp(14px,1.6vw,18px);letter-spacing:.55em;color:rgba(214,233,252,.22);user-select:none}
+  .scroll-hint{position:absolute;bottom:34px;left:clamp(20px,6vw,72px);display:flex;align-items:center;gap:14px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--ink-faint)}
+  .scroll-hint .line{width:52px;height:1px;background:rgba(143,216,255,.3);position:relative;overflow:hidden}
+  .scroll-hint .line::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--frost),transparent);animation:hintSlide 2s ease-in-out infinite}
+  @keyframes hintSlide{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+  @media(max-width:900px){.hero-side{display:none}}
+
+  /* ============ 02 关于 ============ */
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,70px);margin-top:56px;align-items:start}
+  .poem{font-family:var(--serif);font-size:clamp(21px,3vw,31px);line-height:2.1;letter-spacing:.1em}
+  .poem em{font-style:normal;color:var(--frost)}
+  .about-text{margin-top:30px;color:var(--ink-dim);font-size:clamp(14px,1.6vw,15.5px);max-width:520px}
+  .about-text strong{color:var(--frost-hi);font-weight:500}
+  .glass-card{background:var(--glass);border:1px solid var(--line);border-radius:22px;
+    backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+    padding:clamp(26px,3.4vw,42px);position:relative;overflow:hidden}
+  .glass-card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(140deg,rgba(190,235,255,.09),transparent 42%)}
+  .spec{display:flex;flex-direction:column;gap:0;font-family:var(--mono)}
+  .spec-row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:15px 2px;border-bottom:1px solid rgba(150,210,255,.09);font-size:12.5px;letter-spacing:.12em}
+  .spec-row:last-child{border-bottom:none}
+  .spec-row .k{color:var(--ink-faint)}
+  .spec-row .v{color:var(--frost-hi);text-align:right}
+  .spec-row .v .punct{color:rgba(143,216,255,.5);animation:pulse 2.6s infinite}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+
+  /* ============ 03 探索 ============ */
+  .ventures{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px)}
+  .venture{position:relative;border-radius:22px;padding:clamp(26px,3vw,38px) clamp(22px,2.6vw,32px);
+    background:var(--glass);border:1px solid var(--line);
+    backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+    display:flex;flex-direction:column;gap:18px;min-height:340px;
+    transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .45s,box-shadow .45s;overflow:hidden}
+  .venture::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .45s;
+    background:radial-gradient(420px 300px at var(--mx,20%) var(--my,0%),rgba(110,224,255,.15),transparent 70%)}
+  .venture:hover{border-color:rgba(143,216,255,.4);box-shadow:0 22px 60px rgba(4,12,28,.6),0 0 0 1px rgba(143,216,255,.08)}
+  .venture:hover::after{opacity:1}
+  .v-file{font-family:var(--mono);font-size:10.5px;letter-spacing:.26em;color:var(--ink-faint);display:flex;justify-content:space-between;align-items:center}
+  .v-icon{width:46px;height:46px;color:var(--frost);opacity:.9}
+  .v-title{font-family:var(--serif);font-size:clamp(22px,2.4vw,27px);letter-spacing:.08em;margin-top:auto}
+  .v-title small{display:block;font-family:var(--sans);font-weight:400;font-size:12.5px;color:var(--ink-dim);letter-spacing:.2em;margin-top:7px}
+  .v-desc{color:var(--ink-dim);font-size:14px;line-height:1.9}
+  .v-status{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;color:rgba(143,216,255,.72)}
+  .v-status .dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:pulse 2.4s infinite}
+  .v-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.14em;color:var(--frost);cursor:pointer;padding:10px 0;border:none;background:none;font-family:var(--sans);transition:gap .3s}
+  .v-link:hover{gap:14px}
+  .v-link svg{width:14px;height:14px}
+  /* 霜封卡 */
+  .venture.sealed{align-items:flex-start}
+  .venture.sealed .v-title{margin-top:0}
+  .sealed-inner{position:relative;flex:1;display:flex;flex-direction:column;gap:16px}
+  .sealed-blur{filter:blur(7px);opacity:.45;user-select:none;pointer-events:none}
+  .sealed-lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center}
+  .sealed-lock svg{width:34px;height:34px;color:rgba(214,233,252,.5)}
+  .sealed-lock p{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:rgba(214,233,252,.55)}
+  @media(max-width:900px){.ventures{grid-template-columns:1fr;min-height:0}.venture{min-height:0}}
+
+  /* ============ 04 坐标 ============ */
+  #base .base-stage{position:relative;height:clamp(340px,52vw,540px);border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(120,180,240,.05),rgba(4,7,14,.42));overflow:hidden;cursor:grab;touch-action:pan-y}
+  #dbg3d{display:none;position:absolute;top:8px;right:8px;z-index:9;font:10px/1.6 monospace;color:#8ef;padding:4px 8px;background:rgba(0,0,0,.6);border-radius:6px;pointer-events:none;white-space:pre}
+  #dbg3d.show{display:block}
+  #base .base-stage:active{cursor:grabbing}
+  #base .base-stage canvas{display:block;width:100%;height:100%}
+  .base-hud{position:absolute;left:14px;top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--ink-faint);pointer-events:none;line-height:1.95;z-index:2}
+  .base-hud b{color:var(--frost);font-weight:400}
+  .base-drag{position:absolute;right:14px;bottom:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--ink-faint);pointer-events:none;display:flex;align-items:center;gap:7px;z-index:2}
+  .base-drag svg{width:13px;height:13px;stroke:var(--ink-faint)}
+  .base-tag{position:absolute;left:50%;top:15%;transform:translateX(-50%);pointer-events:none;text-align:center;transition:opacity .6s;z-index:2;white-space:nowrap}
+  .base-tag .bt-dot{display:block;width:7px;height:7px;margin:0 auto 7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px 3px rgba(110,224,255,.75);animation:btPulse 2.2s ease-in-out infinite}
+  .base-tag .bt-card{display:inline-block;padding:7px 14px;border:1px solid rgba(150,210,255,.28);border-radius:9px;background:rgba(8,16,32,.66);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--frost-hi)}
+  .base-tag .bt-card small{display:block;margin-top:3px;font-size:9.5px;color:var(--ink-faint);letter-spacing:.26em}
+  @keyframes btPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.7);opacity:.55}}
+  .base-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2.4vw,26px);margin-top:26px}
+  .base-card{padding:clamp(18px,2.6vw,30px);border:1px solid var(--line);border-radius:16px;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);position:relative;overflow:hidden;transition:border-color .4s}
+  .base-card:hover{border-color:rgba(150,210,255,.3)}
+  .base-card::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 180px at var(--mx,50%) var(--my,0%),rgba(120,180,240,.1),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+  .base-card:hover::before{opacity:1}
+  .base-card .bc-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;color:var(--frost);margin-bottom:12px;display:block}
+  .base-card h3{font-family:var(--serif);font-size:clamp(19px,2vw,23px);font-weight:600;letter-spacing:.04em;margin-bottom:11px}
+  .base-card p{font-size:14px;line-height:1.95;color:var(--ink-dim)}
+  .base-card p b{color:var(--frost-hi);font-weight:500}
+  @media(max-width:640px){.base-cards{grid-template-columns:1fr}.base-tag .bt-card small{display:none}.base-hud{font-size:9.5px}#base .sec-sub{white-space:nowrap;font-size:min(3.2vw,14px)}}
+
+  /* ============ 05 联系 ============ */
+  #contact .inner{margin-top:56px;display:flex;flex-direction:column;align-items:flex-start;gap:38px}
+  .contact-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .contact-meta{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--ink-faint);display:flex;flex-direction:column;gap:9px}
+  .contact-meta a{color:rgba(143,216,255,.7);border-bottom:1px dashed rgba(143,216,255,.3);padding-bottom:2px;transition:color .3s;align-self:flex-start}
+  .contact-meta a:hover{color:var(--frost-hi)}
+  .contact-quote{font-family:var(--serif);font-size:clamp(24px,4vw,42px);letter-spacing:.1em;line-height:1.6}
+  .contact-quote em{font-style:normal;background:linear-gradient(110deg,#cfeeff,#8fd8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* ============ 页脚 ============ */
+  footer{border-top:1px solid var(--line);margin-top:60px;padding:44px clamp(20px,6vw,72px) 40px;position:relative;z-index:1}
+  .foot-inner{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:16px;letter-spacing:.16em}
+  .foot-brand svg{width:15px;height:15px;color:rgba(143,216,255,.6)}
+  .foot-brand span{font-family:var(--mono);font-size:10px;letter-spacing:.28em;color:var(--ink-faint);margin-left:8px}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink-faint)}
+  .foot-links a:hover{color:var(--frost)}
+  .foot-copy{font-size:11.5px;color:var(--ink-faint);letter-spacing:.06em;line-height:2}
+  .foot-copy .icp{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em}
+  .foot-copy .cc a{color:var(--ink-faint);text-decoration:underline dotted rgba(143,216,255,.35);text-underline-offset:3px;transition:color .2s}
+  .foot-copy .cc a:hover{color:var(--frost)}
+  @media(max-width:640px){.foot-links{gap:16px}}
+
+  /* ============ 弹窗 ============ */
+  .modal-mask{position:fixed;inset:0;z-index:80;background:rgba(3,6,13,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    display:flex;align-items:center;justify-content:center;padding:22px;opacity:0;visibility:hidden;transition:.4s;overflow-y:auto}
+  .modal-mask.open{opacity:1;visibility:visible}
+  .modal{width:min(430px,100%);margin:auto;border-radius:24px;padding:38px 34px;position:relative;
+    background:linear-gradient(160deg,rgba(16,28,50,.92),rgba(8,15,30,.94));
+    border:1px solid rgba(143,216,255,.22);box-shadow:0 30px 90px rgba(2,6,16,.8);
+    transform:translateY(24px) scale(.97);transition:transform .45s cubic-bezier(.2,.7,.2,1);
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
+  .modal-mask.open .modal{transform:none}
+  .modal .m-tag{font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:rgba(143,216,255,.55)}
+  .modal h3{font-family:var(--serif);font-size:26px;letter-spacing:.14em}
+  .modal p{color:var(--ink-dim);font-size:13.5px;line-height:1.9}
+  .modal .btn{padding:13px 30px;font-size:13px}
+  .modal .m-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink-dim);cursor:pointer;font-size:15px;line-height:1;transition:.3s;display:flex;align-items:center;justify-content:center}
+  .modal .m-close:hover{color:var(--frost-hi);border-color:rgba(143,216,255,.5);transform:rotate(90deg)}
+  .qr-slot{width:180px;height:180px;border-radius:18px;border:1.5px dashed rgba(143,216,255,.35);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:rgba(214,233,252,.5);
+    background:rgba(143,216,255,.03)}
+  .qr-slot svg{width:34px;height:34px;opacity:.75}
+  .qr-slot span{font-family:var(--mono);font-size:10px;letter-spacing:.24em}
+  .qr-slot i{font-style:normal;font-size:11px;letter-spacing:.1em;color:var(--ink-faint)}
+  /* 三码联系弹窗 */
+  .modal-wide{width:min(560px,100%)}
+  .qr-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:2px 0;width:100%;justify-items:center}
+  .qr-item{display:flex;flex-direction:column;align-items:center;gap:9px}
+  .qr-item b{font-size:13.5px;font-weight:600;letter-spacing:.12em;color:var(--frost-hi)}
+  .qr-item small{font-size:11px;color:var(--ink-faint);line-height:1.5;text-align:center;letter-spacing:.04em}
+  .qr-grid .qr-slot{width:138px;height:138px;border-radius:14px;gap:8px}
+  .qr-grid .qr-slot svg{width:26px;height:26px}
+  .qr-grid .qr-slot i{display:none}
+  .qr-grid img{width:138px;height:138px;border-radius:14px;display:block}
+  @media (max-width:640px){
+    .qr-grid{grid-template-columns:1fr;gap:14px}
+    .qr-grid .qr-slot{width:120px;height:120px}
+    .qr-grid .qr-slot span{display:none}
+    .qr-grid img{width:120px;height:120px}
+  }
+  /* Toast */
+  #toast{position:fixed;left:50%;bottom:44px;transform:translate(-50%,26px);z-index:90;
+    background:rgba(10,20,38,.92);border:1px solid rgba(143,216,255,.3);border-radius:100px;
+    padding:13px 28px;font-size:13px;letter-spacing:.1em;color:var(--frost-hi);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    box-shadow:0 14px 44px rgba(2,8,20,.7);opacity:0;visibility:hidden;transition:.45s cubic-bezier(.2,.7,.2,1);
+    display:flex;align-items:center;gap:10px;white-space:nowrap;max-width:92vw}
+  #toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  #toast svg{width:15px;height:15px;color:var(--cyan);flex:none}
+
+  /* ============ 高级动效层 ============ */
+  /* 顶部霜光进度条 */
+  #progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;transform:scaleX(0);transform-origin:0 50%;
+    background:linear-gradient(90deg,rgba(110,224,255,0),#6ee0ff 30%,#9f8cff);box-shadow:0 0 14px rgba(110,224,255,.5);pointer-events:none}
+  /* Hero 星轨环（极淡，仅作纵深暗示） */
+  .hero-orbit{position:absolute;left:50%;top:40%;width:min(92vmin,820px);aspect-ratio:1;transform:translate(-50%,-50%);
+    pointer-events:none;z-index:-1;
+    background:conic-gradient(from 0deg,transparent 0 30deg,rgba(140,210,255,.07) 55deg,transparent 85deg,transparent 190deg,rgba(150,160,255,.06) 225deg,transparent 255deg);
+    -webkit-mask:radial-gradient(closest-side,transparent 60%,#000 61% 72%,transparent 73%);
+    mask:radial-gradient(closest-side,transparent 60%,#000 61% 72%,transparent 73%);
+    filter:blur(3px);opacity:.6;animation:orbitSpin 70s linear infinite}
+  .hero-orbit.o2{display:none}
+  @keyframes orbitSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  /* 竖排字与滚动提示随 ready 淡入 */
+  .hero-side,.scroll-hint{opacity:0;transition:opacity 1.2s ease .8s}
+  body.ready .hero-side,body.ready .scroll-hint{opacity:1}
+  /* 标题 clip 揭示 */
+  .reveal-clip{opacity:0;clip-path:inset(0 0 102% 0);transform:translateY(22px);
+    transition:opacity .7s ease,clip-path 1.05s cubic-bezier(.2,.7,.2,1),transform 1.05s cubic-bezier(.2,.7,.2,1)}
+  .reveal-clip.in{opacity:1;clip-path:inset(-8% 0 -8% 0);transform:none}
+  /* 卡片 3D 入场 */
+  .ventures{perspective:1300px}
+  .venture.reveal{transform:translateY(54px) rotateX(9deg);transform-origin:50% 100%}
+  /* 档案卡鼠标跟随高光 */
+  .glass-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .5s;
+    background:radial-gradient(380px 280px at var(--mx,30%) var(--my,20%),rgba(160,220,255,.11),transparent 70%)}
+  .glass-card:hover::after{opacity:1}
+  /* 弹窗内容级联 */
+  .modal>*{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+  .modal-mask.open .modal>*{opacity:1;transform:none}
+  .modal>*:nth-child(2){transition-delay:.06s}
+  .modal>*:nth-child(3){transition-delay:.12s}
+  .modal>*:nth-child(4){transition-delay:.18s}
+  .modal>*:nth-child(5){transition-delay:.24s}
+  /* 分隔符生长 */
+  .divider::before,.divider::after{transform:scaleX(0);transition:transform 1.2s cubic-bezier(.2,.7,.2,1) .15s}
+  .divider.in::before,.divider.in::after{transform:scaleX(1)}
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+    html{scroll-behavior:auto}
+  }
+</style>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7c80d42a0764430a95f73921e243e09e"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+
+<!-- 背景层 -->
+<div class="aurora" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+<canvas id="frost" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- 预加载 -->
+<div id="loader" aria-hidden="true">
+  <div class="chars"><span>玄</span><span>霜</span><span>纪</span></div>
+  <div class="loader-line"></div>
+  <div class="m-note">FROST · FALLING</div>
+</div>
+
+<!-- 导航 -->
+<nav id="nav">
+  <a class="brand" href="#hero" aria-label="玄霜纪">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 2v20M4 6l16 12M20 6L4 18M12 5l2.4-2M12 5L9.6 3M12 19l2.4 2M12 19l-2.4 2"/></svg>
+    玄霜纪
+  </a>
+  <div class="nav-links">
+    <a href="#about">01 序章</a>
+    <a href="#ventures">02 探索</a>
+    <a href="#base">03 坐标</a>
+    <a href="#contact">04 入场</a>
+  </div>
+  <button class="nav-cta" data-modal="beta">预约内测</button>
+</nav>
+
+<main>
+  <!-- ============ 01 HERO ============ -->
+  <section id="hero">
+    <div class="hero-orbit" aria-hidden="true"></div>
+    <p class="hero-eyebrow reveal">XUANSHUANGJI INTELLIGENCE <b>//</b> EST. 2026 <b>//</b> SHANGHAI</p>
+    <h1 class="hero-title" aria-label="玄霜纪"><span>玄</span><span>霜</span><span>纪</span></h1>
+    <p class="hero-slogan reveal" style="transition-delay:.3s">霜落万象<i>·</i>智启新纪</p>
+    <p class="hero-sub reveal" style="transition-delay:.42s">上海玄霜纪智能科技有限公司 —— 我们在霜雪之下，孕育下一纪元的智能。</p>
+    <p class="hero-en reveal" style="transition-delay:.5s">Intelligence, crystallized.</p>
+    <div class="hero-status reveal" style="transition-delay:.58s">
+      <span class="dot"></span>
+      <span>SYSTEM_STATUS // 霜降进行中</span>
+      <span class="caret"></span>
+    </div>
+    <div class="hero-ctas reveal" style="transition-delay:.7s">
+      <button class="btn btn-primary" data-modal="beta">
+        预约内测
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <a class="btn btn-ghost" href="#about">
+        序章
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+      </a>
+    </div>
+    <div class="hero-side" aria-hidden="true">玄之又玄 · 众妙之门</div>
+    <div class="scroll-hint" aria-hidden="true"><span class="line"></span>SCROLL TO EXPLORE</div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+  </div>
+
+  <!-- ============ 02 关于 ============ -->
+  <section id="about">
+    <p class="sec-label reveal">02 / PROLOGUE · 关于玄霜纪</p>
+    <h2 class="reveal-clip" style="transition-delay:.06s">序章<span class="en">Prologue.</span></h2>
+    <div class="about-grid">
+      <div class="reveal" style="transition-delay:.12s">
+        <div class="poem">
+          <p class="line reveal"><em>玄</em>，是尚未揭晓的答案；</p>
+          <p class="line reveal" style="transition-delay:.14s"><em>霜</em>，是黎明之前的凝练；</p>
+          <p class="line reveal" style="transition-delay:.28s"><em>纪</em>，是将要开启的时代。</p>
+        </div>
+        <p class="about-text">玄霜纪成立于 2026 年的上海，是一家以人工智能为核心的科技公司。我们相信，真正强大的智能如同霜雪——无声降临，却改变一切它所触及的形态。此刻，我们正在打磨第一批产品。<strong>它们还很安静，因为安静，是爆发的前奏。</strong></p>
+      </div>
+      <div class="glass-card reveal" style="transition-delay:.2s">
+        <div class="spec" aria-label="公司档案">
+          <div class="spec-row"><span class="k">ENTITY / 主体</span><span class="v">上海玄霜纪智能科技有限公司</span></div>
+          <div class="spec-row"><span class="k">FOUNDED / 创立</span><span class="v">2026-10-14 · 上海</span></div>
+          <div class="spec-row"><span class="k">USCC / 信用代码</span><span class="v">91310115MAKQDXHU15</span></div>
+          <div class="spec-row"><span class="k">REGISTERED / 注册地址</span><span class="v">中国（上海）自由贸易试验区张杨路828-838号26楼E、F室（集中登记地）</span></div>
+          <div class="spec-row"><span class="k">CAPITAL / 注册资本</span><span class="v">30 万元人民币</span></div>
+          <div class="spec-row"><span class="k">BASE / 坐标</span><span class="v">上海 · 陆家嘴数智港（办公地，非注册地）</span></div>
+          <div class="spec-row"><span class="k">FOCUS / 赛道</span><span class="v">AI-NATIVE APPLICATIONS</span></div>
+          <div class="spec-row"><span class="k">DOMAIN / 域名</span><span class="v">xuanshuangji.com</span></div>
+          <div class="spec-row"><span class="k">STATUS / 状态</span><span class="v">霜降进行中 <span class="punct">▮▮▮</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+  </div>
+
+  <!-- ============ 03 探索 ============ -->
+  <section id="ventures">
+    <p class="sec-label reveal">03 / ARCHIVES · 探索方向</p>
+    <h2 class="reveal-clip" style="transition-delay:.06s">探索<span class="en">Ventures.</span></h2>
+    <p class="sec-sub reveal" style="transition-delay:.1s">三个篇章。两扇门已现轮廓，第三扇，仍封于霜中。</p>
+
+    <div class="ventures">
+      <article class="venture reveal" style="transition-delay:.12s">
+        <div class="v-file"><span>FILE / 01</span><span>AGENT</span></div>
+        <svg class="v-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M12 2v20M4 6l16 12M20 6L4 18M12 5l2.4-2M12 5L9.6 3M12 19l2.4 2M12 19l-2.4 2M5.5 11.8L2 12.5M5.5 11.8l.8-3.6M18.5 11.8L22 12.5M18.5 11.8l-.8-3.6M5.5 16.2L2 15.5M5.5 16.2l.8 3.6M18.5 16.2L22 15.5M18.5 16.2l-.8 3.6"/></svg>
+        <div class="v-title">玄机<small>智能体应用 · AGENT SYSTEMS</small></div>
+        <p class="v-desc">「让每一个想法，都拥有自己的双生之影。」以智能体为核心的应用矩阵，正在霜下成形。</p>
+        <div class="v-status"><span class="dot"></span>INCUBATING · 孵化中</div>
+        <button class="v-link" data-soon>了解详情
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </article>
+
+      <article class="venture reveal" style="transition-delay:.2s">
+        <div class="v-file"><span>FILE / 02</span><span>DATA</span></div>
+        <svg class="v-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M3 20h18M6 20v-6M11 20V9M16 20V4M21 20v-9"/><circle cx="6" cy="11" r="0" /><path d="M4.5 8l3-3M9.5 6.5l3-3M14.5 5l3-3"/></svg>
+        <div class="v-title">霜算<small>数据智能引擎 · DATA INTELLIGENCE</small></div>
+        <p class="v-desc">「在噪声深处，听见结构的声音。」面向复杂数据的智能引擎，研究正在推进。</p>
+        <div class="v-status"><span class="dot"></span>RESEARCHING · 研究中</div>
+        <button class="v-link" data-soon>了解详情
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </article>
+
+      <article class="venture sealed reveal" style="transition-delay:.28s">
+        <div class="v-file"><span>FILE / 03</span><span>SEALED</span></div>
+        <div class="sealed-inner">
+          <div class="sealed-blur">
+            <div class="v-title">？？<small>？？ · CONFIDENTIAL</small></div>
+            <p class="v-desc">「有些答案，需要纪元来揭晓。」第三条产品线的档案处于最高密级，连名字都尚未解封。</p>
+          </div>
+          <div class="sealed-lock">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V7.5a4 4 0 018 0V11M12 15v2"/></svg>
+            <p>SEALED · 霜封档案</p>
+          </div>
+        </div>
+        <div class="v-status"><span class="dot"></span>SEALED · 霜封中</div>
+        <button class="v-link" data-sealed>试图解封
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+  </div>
+
+  <!-- ============ 04 坐标 ============ -->
+  <section id="base">
+    <p class="sec-label reveal">04 / OUTPOST · 大本营</p>
+    <h2 class="reveal-clip" style="transition-delay:.06s">坐标<span class="en">Coordinates.</span></h2>
+    <p class="sec-sub reveal" style="transition-delay:.1s">上海 · 陆家嘴数智港 —— 金融城的地脉，数智纪元的起点。</p>
+    <div class="base-stage reveal" style="transition-delay:.14s" id="base-stage" aria-label="陆家嘴数智港 3D 模型，可拖拽旋转">
+      <div id="dbg3d">3D:待启动</div>
+      <div class="base-hud">LUJIAZUI · PUDONG · SHANGHAI<br><b>陆家嘴数智港</b><br>31.2397° N · 121.4997° E</div>
+      <div class="base-tag" id="base-tag">
+        <span class="bt-dot"></span>
+        <span class="bt-card">我们在这里<small>XUANSHUANGJI · OUTPOST</small></span>
+      </div>
+      <div class="base-drag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-9-9"/><path d="M21 3v6h-6"/></svg>
+        拖拽 · 环视
+      </div>
+    </div>
+    <div class="base-cards">
+      <div class="base-card reveal" style="transition-delay:.18s">
+        <span class="bc-tag">CARD / LOCATION · 区位</span>
+        <h3>陆家嘴 · 数智港</h3>
+        <p>立于<b>陆家嘴金融贸易区</b>核心，金融血脉与数智产业在此交汇。世纪大道与黄浦江环抱之处，浦东天际线就是门前的幕布 —— 在中国金融密度最高的坐标系里，做最安静的智能。</p>
+      </div>
+      <div class="base-card reveal" style="transition-delay:.22s">
+        <span class="bc-tag">CARD / ALLIANCE · 生态</span>
+        <h3>数智生态</h3>
+        <p>与数智港内<b>金融科技与数据智能</b>企业为邻，以 <b>Cloudflare 全球边缘网络</b>承载交付、以<b>飞书协作底座</b>联通团队 —— 轻资产、全球化运行时，是玄霜纪天生的架构。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+  </div>
+
+  <!-- ============ 05 联系 ============ -->
+  <section id="contact">
+    <p class="sec-label reveal">05 / EPILOGUE · 联系玄霜纪</p>
+    <h2 class="reveal-clip" style="transition-delay:.06s">入场<span class="en">Contact.</span></h2>
+    <div class="inner">
+      <p class="contact-quote reveal" style="transition-delay:.12s">下一纪元的旁观者们，<br><em>欢迎提前入场。</em></p>
+      <div class="contact-cta reveal" style="transition-delay:.18s">
+        <button class="btn btn-primary" data-modal="beta">
+          预约内测
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <button class="btn btn-ghost" data-modal="wechat">
+          取得联系
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 01-8.5 8.5c-1.2 0-2.4-.2-3.4-.7L4 21l1.2-4.4A8.5 8.5 0 1121 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>
+        </button>
+        <a class="btn btn-ghost" href="mailto:contact@xuanshuangji.com">
+          商务合作
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+        </a>
+      </div>
+      <div class="contact-meta reveal" style="transition-delay:.24s">
+        <span>MAIL // <a href="mailto:contact@xuanshuangji.com">contact@xuanshuangji.com</a></span>
+        <span>WEB // xuanshuangji.com</span>
+        <span>WECHAT // 个人微信</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 页脚 -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 2v20M4 6l16 12M20 6L4 18M12 5l2.4-2M12 5L9.6 3M12 19l2.4 2M12 19l-2.4 2"/></svg>
+      玄霜纪<span>XUANSHUANGJI INTELLIGENCE</span>
+    </div>
+    <div class="foot-links">
+      <a href="#hero">序</a>
+      <a href="#about">关于</a>
+      <a href="#ventures">探索</a>
+      <a href="#base">坐标</a>
+      <a href="#contact">联系</a>
+      <a href="mailto:contact@xuanshuangji.com">contact@xuanshuangji.com</a>
+    </div>
+    <p class="foot-copy">
+      © 2026 上海玄霜纪智能科技有限公司 · 保留所有权利<br>
+      xuanshuangji.com · .com / .cn / .com.cn / .vip 全域启用中<br>
+      <span class="cc">3D模型：上海中心 by NanoRay · 金茂 / 环金 by Void · 东方明珠 by Ilya Wang（Sketchfab）· <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></span><br>
+      <span class="icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">沪ICP备2026058085号-1</a></span>
+    </p>
+  </div>
+</footer>
+
+<!-- 弹窗：预约内测 -->
+<div class="modal-mask" id="modal-beta" role="dialog" aria-modal="true" aria-label="预约内测">
+  <div class="modal">
+    <button class="m-close" data-close aria-label="关闭">✕</button>
+    <span class="m-tag">FILE / BETA · 内测预约</span>
+    <h3>霜降之前，留个信</h3>
+    <p>留下你的联系方式，霜雪消融、产品成形之时，我们会第一时间通知你。<br>三十秒，一张小表就够了。</p>
+    <a class="btn btn-primary" href="https://dcnqxcj1tkwu.feishu.cn/share/base/shrcnVpnqaTpxZgh8QtN7fp1RXe" target="_blank" rel="noopener">
+      填写预约表
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- 弹窗：取得联系（个人微信名片） -->
+<div class="modal-mask" id="modal-wechat" role="dialog" aria-modal="true" aria-label="联系玄霜纪">
+  <div class="modal">
+    <button class="m-close" data-close aria-label="关闭">✕</button>
+    <span class="m-tag">FILE / CONNECT · 取得联系</span>
+    <h3>扫一扫，抵达霜野</h3>
+    <!-- 企业微信认证后：在此 qr-item 后并列追加一个 qr-item（含 qr-wecom.jpg），并把 .qr-grid 恢复为 repeat(2,1fr) -->
+    <div class="qr-grid">
+      <div class="qr-item">
+        <img src="qr-personal.jpg?v=2" alt="个人微信二维码" width="138" height="138">
+        <b>个人微信</b>
+        <small>求职 · 合作</small>
+      </div>
+    </div>
+    <p>商务与故事，从一个好友开始</p>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" role="status">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+  <span id="toast-text">此篇章尚未解封，敬请期待</span>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  "use strict";
+
+  /* ---------- 预加载 & 入场编排 ---------- */
+  var loader=document.getElementById('loader');
+  var heroStarted=false;
+  function heroIn(){
+    if(heroStarted)return;heroStarted=true;
+    document.body.classList.add('ready');
+    var t=document.querySelector('.hero-title');
+    if(t)requestAnimationFrame(function(){requestAnimationFrame(function(){t.classList.add('in')})});
+    startReveals();
+  }
+  function hideLoader(){
+    if(loader.classList.contains('done'))return;
+    loader.classList.add('done'); /* 霜凝退场 */
+    setTimeout(heroIn,reduceMotion?0:440);
+  }
+  window.addEventListener('load',function(){setTimeout(hideLoader,1600)});
+  setTimeout(hideLoader,3400); /* 兜底 */
+
+  /* ---------- 导航滚动态 + 进度条 + 智能隐藏 ---------- */
+  var nav=document.getElementById('nav'),progress=document.getElementById('progress'),lastY=0;
+  function onScroll(){
+    var y=window.scrollY;
+    nav.classList.toggle('scrolled',y>30);
+    if(!reduceMotion){
+      if(y>170&&y>lastY+6)nav.classList.add('hide');
+      else if(y<lastY-6)nav.classList.remove('hide');
+    }
+    lastY=y;
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    if(progress)progress.style.transform='scaleX('+(max>0?Math.min(y/max,1).toFixed(4):0)+')';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* ---------- 霜雪粒子（景深 + 鼠标扰动 + 流星） ---------- */
+  var canvas=document.getElementById('frost'),ctx=canvas.getContext('2d'),parts=[],comets=[],W,H,mx=-9e3,my=-9e3;
+  var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  function makeParts(){
+    parts.length=0;
+    var n=window.innerWidth<768?38:72;
+    for(var i=0;i<n;i++){
+      var z=rnd(.35,1);
+      parts.push({
+        x:rnd(0,W),y:rnd(0,H),z:z,
+        r:(.6+1.7*z)*rnd(.7,1.15),
+        vy:.12+.42*z,
+        vx:rnd(-.1,.1)*z,
+        sway:rnd(.4,1.4),phase:rnd(0,6.283),
+        alpha:rnd(.12,.55)*z,
+        star:Math.random()<.16
+      });
+    }
+  }
+  var nextComet=performance.now()+rnd(2600,6000);
+  function spawnComet(){
+    var fromLeft=Math.random()<.5;
+    comets.push({
+      x:fromLeft?rnd(-.05,.3)*W:rnd(.7,1.05)*W,
+      y:rnd(.02,.32)*H,
+      vx:(fromLeft?1:-1)*rnd(6,9.5),
+      vy:rnd(1.6,2.7),
+      life:1
+    });
+  }
+  function tick(t){
+    ctx.clearRect(0,0,W,H);
+    if(!reduceMotion&&t>nextComet&&comets.length<2){spawnComet();nextComet=t+rnd(4200,9500)}
+    /* 流星 */
+    for(var i=comets.length-1;i>=0;i--){
+      var c=comets[i];
+      c.x+=c.vx;c.y+=c.vy;c.life-=.014;
+      if(c.life<=0){comets.splice(i,1);continue}
+      var g=ctx.createLinearGradient(c.x,c.y,c.x-c.vx*11,c.y-c.vy*11);
+      g.addColorStop(0,'rgba(214,241,255,'+(.85*c.life).toFixed(3)+')');
+      g.addColorStop(1,'rgba(140,200,255,0)');
+      ctx.strokeStyle=g;ctx.lineWidth=1.4;ctx.lineCap='round';
+      ctx.beginPath();ctx.moveTo(c.x,c.y);ctx.lineTo(c.x-c.vx*11,c.y-c.vy*11);ctx.stroke();
+      ctx.fillStyle='rgba(236,250,255,'+(.9*c.life).toFixed(3)+')';
+      ctx.beginPath();ctx.arc(c.x,c.y,1.6,0,6.283);ctx.fill();
+    }
+    /* 粒子 */
+    for(var j=0;j<parts.length;j++){
+      var p=parts[j];
+      if(!reduceMotion){
+        p.y+=p.vy;
+        p.x+=p.vx+Math.sin(t/1600*p.sway+p.phase)*.18;
+        var dx=p.x-mx,dy=p.y-my,d2=dx*dx+dy*dy;
+        if(d2<7225){var d=Math.sqrt(d2)||1,f=(85-d)/85*.85;p.x+=dx/d*f;p.y+=dy/d*f}
+        if(p.y>H+10){p.y=-10;p.x=rnd(0,W)}
+        if(p.x>W+10)p.x=-10;
+        if(p.x<-10)p.x=W+10;
+      }
+      if(p.star){
+        /* 六芒霜晶 */
+        var s=p.r*3.4;
+        ctx.strokeStyle='rgba(160,220,255,'+p.alpha.toFixed(3)+')';
+        ctx.lineWidth=.7;
+        ctx.beginPath();
+        for(var k=0;k<3;k++){
+          var a=k*1.047+.524;
+          ctx.moveTo(p.x-Math.cos(a)*s,p.y-Math.sin(a)*s);
+          ctx.lineTo(p.x+Math.cos(a)*s,p.y+Math.sin(a)*s);
+        }
+        ctx.stroke();
+      }else{
+        ctx.fillStyle='rgba(190,230,255,'+p.alpha.toFixed(3)+')';
+        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill();
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  window.addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY},{passive:true});
+  resize();makeParts();
+  window.addEventListener('resize',function(){resize();makeParts()});
+  requestAnimationFrame(tick);
+
+  /* ---------- 渐显（loader 退场后启动，保证编排节奏） ---------- */
+  var revealsStarted=false;
+  function startReveals(){
+    if(revealsStarted)return;revealsStarted=true;
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.reveal,.reveal-clip,.divider').forEach(function(el){io.observe(el)});
+  }
+
+  /* ---------- 卡片 3D 倾斜 + 高光跟随（桌面） ---------- */
+  if(window.matchMedia('(pointer:fine)').matches&&!reduceMotion){
+    document.querySelectorAll('.venture,.glass-card,.base-card').forEach(function(card){
+      card.addEventListener('mousemove',function(e){
+        var r=card.getBoundingClientRect();
+        var x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+        card.style.setProperty('--mx',(x*100).toFixed(1)+'%');
+        card.style.setProperty('--my',(y*100).toFixed(1)+'%');
+        if(card.classList.contains('venture')){
+          card.style.transform='perspective(900px) rotateX('+((.5-y)*5).toFixed(2)+'deg) rotateY('+((x-.5)*7).toFixed(2)+'deg) translateY(-7px)';
+        }
+      });
+      card.addEventListener('mouseleave',function(){card.style.transform=''});
+    });
+  }
+
+  /* ---------- 04 坐标：陆家嘴数智港 3D（进入视口才加载 three.js） ---------- */
+  (function(){
+    var stage=document.getElementById('base-stage');if(!stage)return;
+    var tag=document.getElementById('base-tag');
+    var reduceM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var started=false;
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting&&!started){started=true;io.disconnect();window.__mark&&window.__mark('io:boot');boot();}});
+    },{rootMargin:'1600px'});   /* 提前 1-2 屏预载，慢网络下滚到即就绪 */
+    io.observe(stage);
+    /* 诊断角标+性能埋点：正式版页面零可见元素；URL带?debug=1才显示角标，
+       埋点后台静默收集落localStorage，报障时用户开debug链接即可取数 */
+    var dbgEl=document.getElementById('dbg3d');
+    var DBG=/debug=1/.test(location.search);
+    if(DBG)dbgEl.classList.add('show');
+    var PERF=window.__perf={ua:navigator.userAgent,tl:{},dbg:DBG};
+    window.__mark=function(k){try{PERF.tl[k]=Math.round(performance.now())}catch(e){}};
+    window.__mark('boot:script');
+    var dbgState='';
+    Object.defineProperty(window,'__dbgMsg',{get:function(){return dbgState},set:function(v){dbgState=v;window.__mark('S:'+v)}});
+    window.__dbgMsg='3D:待触发';
+    window.__dbg3d=function(s){try{dbgEl.textContent=s}catch(e){}};
+    setInterval(function(){try{
+      var t=window.__towers;
+      if(t&&!PERF.tl['towers'])window.__mark('towers');
+      if(DBG){
+        var tw=t?(' 塔 p'+t.pearl.length+'/s'+t.sht.length+'/j'+t.jm.length+'/w'+t.swfc.length):'';
+        var gl=window.__glR;
+        var info=gl&&gl.info?' dc'+gl.info.render.calls:'';
+        var lost=gl&&gl.getContext&&gl.getContext().isContextLost()?' CTX-LOST!':'';
+        var tl=PERF.tl,t0=tl['io:boot'],t1=tl['S:城市OK 精模加载#1'],t2=tl['S:城市OK 精模OK'];
+        var ls=window.__lmSeg;
+        var lmSeg=(ls&&ls.net!=null)?(' 网'+ls.net+'s'+(ls.dec!=null?' 解'+ls.dec+'s':'')):((t2!=null&&t1!=null)?' 载'+Math.round((t2-t1)/1000)+'s':'');
+        var seg=(t1!=null&&t0!=null?' 启'+Math.round((t1-t0)/1000)+'s':'')+lmSeg;
+        window.__dbg3d(window.__dbgMsg+tw+info+seg+lost);
+      }
+    }catch(e){}},1000);
+    /* 埋点落盘：pagehide时写入localStorage（FIFO留30条会话），debug模式当场console.table */
+    function dumpPerf(){try{
+      var pt=performance.getEntriesByType('paint');
+      for(var i=0;i<pt.length;i++){if(pt[i].name==='first-paint')PERF.fp=Math.round(pt[i].startTime);else if(pt[i].name==='first-contentful-paint')PERF.fcp=Math.round(pt[i].startTime)}
+      PERF.t=Date.now();PERF.vp=innerWidth+'x'+innerHeight;
+      var a=JSON.parse(localStorage.getItem('xsj3dperf')||'[]');
+      a.push(PERF);if(a.length>30)a.shift();
+      localStorage.setItem('xsj3dperf',JSON.stringify(a));
+      if(DBG)console.table(a.slice(-3));
+    }catch(e){}}
+    addEventListener('pagehide',dumpPerf,{once:true});
+    function boot(){
+      var s=document.createElement('script');
+      s.onload=function(){
+        var g=document.createElement('script');
+        g.onload=function(){
+          var d=document.createElement('script');
+          d.onload=function(){try{init(true)}catch(err){stage.style.display='none'}};
+          d.onerror=function(){try{init(true)}catch(err){stage.style.display='none'}};
+          document.head.appendChild(d);
+          d.src='assets/DRACOLoader.js?v=128';
+        };
+        g.onerror=function(){try{init(false)}catch(err){stage.style.display='none'}};
+        document.head.appendChild(g);
+        g.src='assets/GLTFLoader.js?v=128';
+      };
+      s.onerror=function(){
+        /* 自托管失败 → 回退公网 CDN */
+        var c=document.createElement('script');
+        c.onload=function(){
+          var g=document.createElement('script');
+          g.onload=function(){try{init(true)}catch(err){stage.style.display='none'}};
+          g.onerror=function(){try{init(false)}catch(err){stage.style.display='none'}};
+          document.head.appendChild(g);
+          g.src='https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js';
+        };
+        c.onerror=function(){stage.style.display='none'};
+        document.head.appendChild(c);
+        c.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+      };
+      document.head.appendChild(s);
+      s.src='assets/three.min.js?v=128';
+    }
+    function init(precise){
+      var W=stage.clientWidth,H=stage.clientHeight;
+      var renderer=new THREE.WebGLRenderer({antialias:false,alpha:true});
+      renderer.outputEncoding=THREE.sRGBEncoding;
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.35));
+      renderer.setSize(W,H);
+      stage.appendChild(renderer.domElement);
+      window.__glR=renderer;window.__dbgMsg='3D:渲染中 '+W+'x'+H;
+      var scene=new THREE.Scene();
+      scene.fog=new THREE.FogExp2(new THREE.Color(0x04070e).convertSRGBToLinear(),.023);
+      var camera=new THREE.PerspectiveCamera(46,W/H,.1,500);
+      var asp=W/H;
+      if(asp>1.25)camera.fov=38;         /* 宽屏拉近，城市填满画面 */
+      if(asp>1.9)camera.fov=33;
+      camera.updateProjectionMatrix();
+      camera.position.set(-52,20,-18);camera.lookAt(-2,8,-26);
+      var pivot=new THREE.Group();scene.add(pivot);
+      scene.add(new THREE.AmbientLight(0x2a4a70,1.3));
+      scene.add(new THREE.HemisphereLight(0x35597e,0x081120,.5));
+      var dir=new THREE.DirectionalLight(0xbfe0ff,.95);dir.position.set(30,50,20);scene.add(dir);
+      var beaconLight=new THREE.PointLight(0x6ee0ff,1.5,70);beaconLight.position.set(33,16,6);scene.add(beaconLight);
+      var towerMat=new THREE.MeshStandardMaterial({color:0x0d1d33,metalness:.85,roughness:.32,emissive:0x061428,emissiveIntensity:.55});
+      var edgeMat=new THREE.LineBasicMaterial({color:0x8fd8ff,transparent:true,opacity:.3});
+      function tower(geo,x,z){
+        var g=new THREE.Group();
+        g.add(new THREE.Mesh(geo,towerMat));
+        g.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo),edgeMat));
+        g.position.set(x,0,z);lowGroup.add(g);return g;
+      }
+      /* 渐进装载：低模零网络即时打底，GLB 精模到达后无缝替换（慢网络不再空城） */
+      var lowGroup=new THREE.Group();pivot.add(lowGroup);
+      var warnMats=[];
+      function adoptModel(root){
+        if(lowGroup){pivot.remove(lowGroup);lowGroup=null}
+        pivot.add(root);
+        root.traverse(function(o){
+          if(o.isMesh&&o.material&&o.material.name==='warn_mat')warnMats.push(o.material);
+          if(o.isMesh&&o.material&&(o.material.name==='swfc_strip'||o.material.name==='swfc_hline'))o.material.emissiveIntensity=2.6;
+        });
+      }
+      function buildLowpoly(){
+        /* 上海中心 · 螺旋收分 */
+        (function(){var y=0,h=3.4,r=4.2;
+          for(var i=0;i<9;i++){
+            var g=tower(new THREE.CylinderGeometry(r*.985,r,h,10),-5,-32);
+            g.position.y=y+h/2;g.rotation.y=i*.34;y+=h*.96;r*=.955;h*=.94;
+          }
+          var tip=tower(new THREE.ConeGeometry(.9,3,8),-5,-32);tip.position.y=y+1.4;
+        })();
+        /* 金茂 · 宝塔 */
+        (function(){var y=0,s=4.4;
+          for(var i=0;i<6;i++){
+            var h=2.1+i*.18;
+            var g=tower(new THREE.BoxGeometry(s,h,s),-4.5,-25);g.rotation.y=Math.PI/4;g.position.y=y+h/2;
+            y+=h;s*=.82;
+          }
+          var t=tower(new THREE.ConeGeometry(.75,4.4,8),-4.5,-25);t.position.y=y+2.1;
+        })();
+        /* 环金 · 收分塔 */
+        (function(){
+          var b=tower(new THREE.BoxGeometry(4.6,12,3.1),1.7,-27.8);b.position.y=6;
+          var t=tower(new THREE.BoxGeometry(3.3,10,2.2),1.7,-27.8);t.position.y=17;
+        })();
+        /* 楼群 */
+        (function(){
+          var rnd=function(a,b){return a+Math.random()*(b-a)},n=0;
+          for(var gx=-4;gx<=4;gx++)for(var gz=-3;gz<=3;gz++){
+            if(n>=34)break;
+            var x=gx*7+rnd(-2,2),z=gz*7+rnd(-2,2)-14;
+            if(Math.abs(x+5)<6&&z>-38&&z<-26)continue;     /* 上海中心 */
+            if(Math.abs(x+4.5)<5.5&&Math.abs(z+25)<5.5)continue; /* 金茂 */
+            if(Math.abs(x-1.7)<5.5&&Math.abs(z+27.8)<4.5)continue; /* 环金 */
+            if(x>28&&x<38&&z>1&&z<11)continue;               /* 数智港空地 */
+            if(Math.random()<.24)continue;
+            var h=rnd(3,17);
+            var g=tower(new THREE.BoxGeometry(rnd(2,3.6),h,rnd(2,3.6)),x,z);
+            g.rotation.y=rnd(0,Math.PI);g.position.y=h/2;n++;
+          }
+        })();
+        /* 黄浦江（西侧） */
+        var river=new THREE.Mesh(new THREE.PlaneGeometry(150,26),
+          new THREE.MeshBasicMaterial({color:0x0a2c4e,transparent:true,opacity:.5}));
+        river.rotation.set(-Math.PI/2,0,Math.PI/2);river.position.set(-27,-.05,8);lowGroup.add(river);
+        /* 数智港基座 */
+        var campus=new THREE.Mesh(new THREE.BoxGeometry(10,.7,8),
+          new THREE.MeshStandardMaterial({color:0x12253f,metalness:.7,roughness:.4,emissive:0x0a3355,emissiveIntensity:.7}));
+        campus.position.set(33,.35,6);lowGroup.add(campus);
+      }
+      buildLowpoly();                                   /* 低模先出场，不等网络 */
+      if(precise&&THREE.GLTFLoader){
+        var doLoad=function(){
+          var gl=new THREE.GLTFLoader();
+          if(THREE.DRACOLoader){var dr=new THREE.DRACOLoader();dr.setDecoderPath('assets/draco/');gl.setDRACOLoader(dr)}
+          gl.load('assets/lujiazui.glb?v=20261020d',function(gltf){
+            window.__dbgMsg='城市OK';
+            adoptModel(gltf.scene);
+            /* 三件套精模层：城市就位后懒加载叠加（不阻塞首屏）；失败自动重试×3 */
+            var lmRetry=0;
+            var loadLM=function(){
+            window.__dbgMsg='城市OK 精模加载#'+(lmRetry+1);
+            /* 无进度看门狗：10s零新字节才判挂重发（慢速正常下载不误杀）；
+               跨海单连接限速→大文件走4条Range并行分片（探测不支持则整体下载兜底）；
+               耗时拆段：网=发起→字节收齐（含建连），解=收齐→onload（Draco解码） */
+            var done=false,lastT=Date.now(),lastB=0,netDone=null,tStart=performance.now();
+            window.__lmSeg={net:null,dec:null};
+            var wd=setInterval(function(){
+              if(done){clearInterval(wd);return}
+              if(Date.now()-lastT>10000){done=true;clearInterval(wd);if(lmRetry<3){lmRetry++;loadLM()}else{window.__dbgMsg='城市OK 精模FAIL#4'}}
+            },2000);
+            var gl2=new THREE.GLTFLoader();
+            if(THREE.DRACOLoader){var dr2=new THREE.DRACOLoader();dr2.setDecoderPath('assets/draco/');gl2.setDRACOLoader(dr2)}
+            var lmUrl='assets/landmarks.glb?v=20261020h';
+            var lmOnLoad=function(g2){
+              if(done)return;done=true;clearInterval(wd);
+              if(netDone)window.__lmSeg.dec=Math.round((performance.now()-netDone)/100)/10;
+              window.__dbgMsg='城市OK 精模OK';
+              pivot.add(g2.scene);
+              /* 四塔材质捕获：three会把多primitive mesh按内部data名拆建，
+                 lmk_xx 常只是父Group名 → 父链全名匹配 + 收集数组（动画覆盖全部primitive） */
+              window.__towers={pearl:[],sht:[],jm:[],swfc:[]};
+              g2.scene.traverse(function(o){
+                if(!o.isMesh)return;
+                var s='',p=o.parent;
+                while(p){s+=' '+p.name;p=p.parent}
+                var n=(o.name+s).toLowerCase();
+                if(n.indexOf('pearl')>=0)window.__towers.pearl.push(o);
+                else if(n.indexOf('sht')>=0)window.__towers.sht.push(o);
+                else if(n.indexOf('swfc')>=0)window.__towers.swfc.push(o);
+                else if(n.indexOf('jm')>=0)window.__towers.jm.push(o);
+              });
+            };
+            var lmOnProg=function(e){
+              if(!e||e.loaded==null)return;
+              if(e.loaded!==lastB){lastB=e.loaded;lastT=Date.now()}
+              if(e.total&&e.loaded>=e.total&&netDone==null){netDone=performance.now();window.__lmSeg.net=Math.round((netDone-tStart)/100)/10}
+            };
+            var lmOnErr=function(){if(done)return;done=true;clearInterval(wd);window.__dbgMsg='城市OK 精模FAIL#'+(lmRetry+1);if(lmRetry<3){lmRetry++;setTimeout(loadLM,2000)}};
+            /* 主路径：探测Range支持→4片并行流式下载→拼Buffer→GLTFLoader.parse */
+            fetch(lmUrl,{headers:{'Range':'bytes=0-0'}}).then(function(h){
+              var cr=h.headers.get('Content-Range')||'';
+              var total=cr.indexOf('/')>=0?(parseInt(cr.split('/')[1],10)||0):0;
+              if(!h.ok||total<1){gl2.load(lmUrl,lmOnLoad,lmOnProg,lmOnErr);return}
+              var N=total>900000?4:2,per=Math.ceil(total/N),ps=[],j;
+              for(var i=0;i<N;i++){
+                (function(s0){
+                  ps.push(fetch(lmUrl,{headers:{'Range':'bytes='+s0+'-'+Math.min(total-1,s0+per-1)}}).then(function(r){
+                    if(!r.ok||!r.body)throw 0;
+                    var rd=r.body.getReader(),cs=[];
+                    var step=function(){return rd.read().then(function(m){
+                      if(m.done)return cs;
+                      cs.push(m.value);lastT=Date.now();lastB+=m.value.byteLength;
+                      return step();
+                    })};
+                    return step().then(function(chunks){
+                      var len=0,k;for(k=0;k<chunks.length;k++)len+=chunks[k].byteLength;
+                      var u=new Uint8Array(len),o=0;
+                      for(k=0;k<chunks.length;k++){u.set(chunks[k],o);o+=chunks[k].byteLength}
+                      return u;
+                    });
+                  }));
+                })(i*per);
+              }
+              Promise.all(ps).then(function(us){
+                if(done)return;
+                var out=new Uint8Array(total),o=0;
+                for(j=0;j<us.length;j++){out.set(us[j],o);o+=us[j].byteLength}
+                netDone=performance.now();window.__lmSeg.net=Math.round((netDone-tStart)/100)/10;
+                gl2.parse(out.buffer,'',lmOnLoad,lmOnErr);
+              }).catch(function(){lmOnErr()});
+            }).catch(function(){gl2.load(lmUrl,lmOnLoad,lmOnProg,lmOnErr)});
+            };
+            loadLM();
+          },undefined,function(){});
+        };
+        if(THREE.DRACOLoader||window.__dracoTried)doLoad();
+        else{window.__dracoTried=true;var ds=document.createElement('script');
+          ds.onload=ds.onerror=doLoad;ds.src='assets/DRACOLoader.js?v=128';document.head.appendChild(ds)}
+      }
+      var cEdge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(10,.7,8)),
+        new THREE.LineBasicMaterial({color:0x6ee0ff,transparent:true,opacity:.85}));
+      cEdge.position.set(33,.35,6);pivot.add(cEdge);
+      /* 光柱（双层） */
+      var beam=new THREE.Mesh(new THREE.CylinderGeometry(.55,.55,30,16,1,true),
+        new THREE.MeshBasicMaterial({color:0x6ee0ff,transparent:true,opacity:.15,side:THREE.DoubleSide,depthWrite:false,fog:false}));
+      beam.position.set(33,15,6);pivot.add(beam);
+      var beam2=new THREE.Mesh(beam.geometry,beam.material.clone());
+      beam2.material.opacity=.06;beam2.scale.set(2.3,1,2.3);beam2.position.copy(beam.position);pivot.add(beam2);
+      /* 脉冲环 ×3 */
+      var rings=[];
+      for(var i=0;i<3;i++){
+        var rg=new THREE.Mesh(new THREE.RingGeometry(1,1.14,48),
+          new THREE.MeshBasicMaterial({color:0x6ee0ff,transparent:true,opacity:.7,side:THREE.DoubleSide,depthWrite:false,fog:false}));
+        rg.rotation.x=-Math.PI/2;rg.position.set(33,.12,6);
+        rg.userData.phase=i/3;pivot.add(rg);rings.push(rg);
+      }
+      /* ---------- 开场巡游：明珠→沿江→三件套→数智港→回默认（30s电影运镜，拖动即打断） ---------- */
+      var cine={on:false,t0:0,dur:30,played:false};
+      /* 自写Catmull-Rom（three r128库曲线在非闭合曲线t=0边界会越界报错） */
+      function catmull4(p0,p1,p2,p3,t,out){
+        var t2=t*t,t3=t2*t;
+        out.x=.5*((2*p1.x)+(-p0.x+p2.x)*t+(2*p0.x-5*p1.x+4*p2.x-p3.x)*t2+(-p0.x+3*p1.x-3*p2.x+p3.x)*t3);
+        out.y=.5*((2*p1.y)+(-p0.y+p2.y)*t+(2*p0.y-5*p1.y+4*p2.y-p3.y)*t2+(-p0.y+3*p1.y-3*p2.y+p3.y)*t3);
+        out.z=.5*((2*p1.z)+(-p0.z+p2.z)*t+(2*p0.z-5*p1.z+4*p2.z-p3.z)*t2+(-p0.z+3*p1.z-3*p2.z+p3.z)*t3);
+        return out;
+      }
+      function cineVec(pts,u,out){
+        var n=pts.length-1;
+        if(!(u>=0))u=0;                        /* NaN/负值总兜底（防索引越界崩loop） */
+        if(u>1)u=1;
+        var f=u*n,seg=Math.min(n-1,Math.floor(f)),t=f-seg;
+        return catmull4(pts[Math.max(0,seg-1)],pts[seg],pts[seg+1],pts[Math.min(n,seg+2)],t,out);
+      }
+      var cinePosPts=[new THREE.Vector3(-44,10,6),new THREE.Vector3(-54,17,-12),new THREE.Vector3(-42,24,-40),new THREE.Vector3(-8,21,-54),new THREE.Vector3(16,18,-32),new THREE.Vector3(-52,20,-18)];
+      var cineLookPts=[new THREE.Vector3(-27.9,12,-4.3),new THREE.Vector3(-22,10,-12),new THREE.Vector3(-2.6,13,-28),new THREE.Vector3(-2.6,11,-28),new THREE.Vector3(31,4,5),new THREE.Vector3(-2,8,-26)];
+      var _cineP=new THREE.Vector3(),_cineL=new THREE.Vector3();
+      function cineStart(){if(cine.played||reduceM)return;cine.played=true;cine.on=true;cine.t0=performance.now()}
+      function cineStop(){
+        if(!cine.on)return;
+        cine.on=false;                       /* 打断即接管：留在当前视角，自转恢复 */
+      }
+      function cineEase(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2}
+      /* 交互：拖拽环视 + 惯性 + 闲时自转 */
+      var vel=0,tiltTarget=0,tilt=0,dragging=false,lx=0,ly=0;
+      function down(e){cineStop();dragging=true;var p=e.touches?e.touches[0]:e;lx=p.clientX;ly=p.clientY}
+      function move(e){
+        if(!dragging)return;
+        var p=e.touches?e.touches[0]:e,x=p.clientX,y=p.clientY;
+        var dx=lx-x,dy=ly-y;
+        pivot.rotation.y-=dx*.0038;                 /* 直接跟手：位移=转角 */
+        vel=-dx*.00045;                             /* 记录松手惯性 */
+        tiltTarget=Math.max(-.3,Math.min(.28,tiltTarget+dy*.0016));
+        lx=x;ly=y;
+        if(e.cancelable&&Math.abs(dx)>Math.abs(dy))e.preventDefault();
+      }
+      function up(){dragging=false}
+      stage.addEventListener('mousedown',down);
+      window.addEventListener('mousemove',move);
+      window.addEventListener('mouseup',up);
+      stage.addEventListener('touchstart',down,{passive:true});
+      stage.addEventListener('touchmove',move,{passive:false});
+      stage.addEventListener('touchend',up);
+      /* 浮标投影跟随 */
+      var anchor=new THREE.Vector3(33,17.5,6);
+      function placeTag(){
+        var v=anchor.clone().applyMatrix4(pivot.matrixWorld).project(camera);
+        tag.style.left=((v.x*.5+.5)*100).toFixed(2)+'%';
+        tag.style.top=((-v.y*.5+.5)*100).toFixed(2)+'%';
+        tag.style.opacity=(v.z<1&&v.x>-.96&&v.x<.96)?'':'0';
+      }
+      /* 真实路灯光带（OSM 711条路：主干暖黄/次干霜蓝） */
+      fetch('assets/roads.json?v=1').then(function(r){return r.json()}).then(function(roads){
+        var main=[],sub=[];
+        for(var i=0;i<roads.length;i++){
+          var rd=roads[i],isMain=(rd.t=='trunk'||rd.t=='primary'||rd.t=='secondary'),arr=isMain?main:sub;
+          for(var j=0;j<rd.p.length-1;j++){
+            arr.push(-11+.04*rd.p[j][0],.03,-14+.04*rd.p[j][1]);
+            arr.push(-11+.04*rd.p[j+1][0],.03,-14+.04*rd.p[j+1][1]);
+          }
+        }
+        var flowTex=(function(){          /* 车流亮点纹理（主干道专用） */
+          var cv=document.createElement('canvas');cv.width=128;cv.height=16;
+          var fc=cv.getContext('2d');
+          for(var i=0;i<14;i++){
+            fc.fillStyle='rgba(255,255,255,'+(0.9+Math.random()*.1)+')';
+            fc.fillRect(Math.random()*128,4.5+Math.random()*7,14+Math.random()*18,5);
+          }
+          var t=new THREE.CanvasTexture(cv);
+          t.wrapS=t.wrapT=THREE.RepeatWrapping;
+          return t;
+        })();
+        function mk(pos,color,op,w,flow){
+          var v=[],uv=[];
+          for(var i=0;i<pos.length;i+=6){
+            var x1=pos[i],z1=pos[i+2],x2=pos[i+3],z2=pos[i+5];
+            var dx=x2-x1,dz=z2-z1,L=Math.sqrt(dx*dx+dz*dz)||1;
+            var nx=-dz/L*w/2,nz=dx/L*w/2;
+            v.push(x1-nx,.03,z1-nz, x1+nx,.03,z1+nz, x2+nx,.03,z2+nz,
+                   x1-nx,.03,z1-nz, x2+nx,.03,z2+nz, x2-nx,.03,z2-nz);
+            var u=L/2.4;
+            uv.push(0,0, 0,1, u,1,  0,0, u,1, u,0);
+          }
+          var g=new THREE.BufferGeometry();
+          g.setAttribute('position',new THREE.Float32BufferAttribute(v,3));
+          g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));
+          var mat=flow?new THREE.MeshBasicMaterial({map:flowTex,color:color,transparent:true,opacity:1,side:THREE.DoubleSide,blending:THREE.AdditiveBlending,depthWrite:false})
+                      :new THREE.MeshBasicMaterial({color:color,transparent:true,opacity:op,side:THREE.DoubleSide});
+          pivot.add(new THREE.Mesh(g,mat));
+        }
+        if(main.length){window.__flowTex=flowTex;mk(main,0xffffff,.97,.5,true)}
+        if(sub.length)mk(sub,0x3d9fe0,.32,.28,false);
+      }).catch(function(){});
+      /* 江面动态波光（程序纹理缓慢流动，贴合江岸多边形） */
+      (function(){
+        var cv=document.createElement('canvas');cv.width=cv.height=512;
+        var c2=cv.getContext('2d');
+        for(var i=0;i<46;i++){            /* 沿江流向光条 */
+          var y=Math.random()*512,w=30+Math.random()*120,a=.10+Math.random()*.22;
+          var gr=c2.createLinearGradient(0,y,512,y);
+          gr.addColorStop(0,'rgba(160,220,255,0)');
+          gr.addColorStop(.5,'rgba(200,240,255,'+a+')');
+          gr.addColorStop(1,'rgba(160,220,255,0)');
+          c2.fillStyle=gr;c2.fillRect(Math.random()*512,y,w,2.5+Math.random()*4);
+        }
+        for(var i=0;i<40;i++){            /* 星光倒影 */
+          c2.fillStyle='rgba(180,230,255,'+(.08+Math.random()*.18)+')';
+          c2.fillRect(Math.random()*512,Math.random()*512,2,2);
+        }
+        var tex=new THREE.CanvasTexture(cv);
+        tex.wrapS=tex.wrapT=THREE.RepeatWrapping;tex.repeat.set(.06,.09);
+        var SH=[[-27,-50],[-26,-38],[-25,-30],[-27,-22],[-30,-14],[-34,-6],[-39,1],[-45,8],[-52,14],[-60,18],[-62,18],[-62,-52]];
+        /* 江面底色提亮层（与暗陆地区分，一眼认出江） */
+        var shb=new THREE.Shape();
+        shb.moveTo(SH[0][0],-SH[0][1]);
+        for(var i=1;i<SH.length;i++)shb.lineTo(SH[i][0],-SH[i][1]);
+        var gb=new THREE.ShapeGeometry(shb);gb.rotateX(-Math.PI/2);
+        var rb=new THREE.Mesh(gb,new THREE.MeshBasicMaterial({color:0x3a82c4}));
+        rb.position.y=.011;pivot.add(rb);
+        /* 岸线亮线（江陆分界，青白宽条） */
+        (function(){
+          var v=[];
+          for(var i=0;i<SH.length-1;i++){
+            var x1=SH[i][0],z1=-SH[i][1],x2=SH[i+1][0],z2=-SH[i+1][1];
+            var dx=x2-x1,dz=z2-z1,L=Math.sqrt(dx*dx+dz*dz)||1;
+            var nx=-dz/L*.11,nz=dx/L*.11;
+            v.push(x1-nx,.028,z1-nz, x1+nx,.028,z1+nz, x2+nx,.028,z2+nz,
+                   x1-nx,.028,z1-nz, x2+nx,.028,z2+nz, x2-nx,.028,z2-nz);
+          }
+          var g2=new THREE.BufferGeometry();
+          g2.setAttribute('position',new THREE.Float32BufferAttribute(v,3));
+          pivot.add(new THREE.Mesh(g2,new THREE.MeshBasicMaterial({color:0x7fd8ff,transparent:true,opacity:.9,side:THREE.DoubleSide,fog:false,blending:THREE.AdditiveBlending,depthWrite:false})));
+        })();
+        var sh=new THREE.Shape();
+        sh.moveTo(SH[0][0],-SH[0][1]);
+        for(var i=1;i<SH.length;i++)sh.lineTo(SH[i][0],-SH[i][1]);
+        var g=new THREE.ShapeGeometry(sh);g.rotateX(-Math.PI/2);
+        var w=new THREE.Mesh(g,new THREE.MeshBasicMaterial({map:tex,transparent:true,opacity:.5,depthWrite:false,fog:false,blending:THREE.AdditiveBlending}));
+        w.position.y=.02;pivot.add(w);
+        window.__riverTex=tex;
+      })();
+      /* 光柱江面余光（近岸青光带，与光柱呼吸同步） */
+      var refl=new THREE.Mesh(new THREE.PlaneGeometry(1.6,11),
+        new THREE.MeshBasicMaterial({color:0x6ee0ff,transparent:true,opacity:.10,side:THREE.DoubleSide,depthWrite:false}));
+      refl.rotation.x=-Math.PI/2;refl.position.set(-26,.015,10);pivot.add(refl);
+      /* 对岸外滩剪影（627栋浦西楼，低亮深蓝，雾中远景） */
+      fetch('assets/far_side.json?v=1').then(function(r){return r.json()}).then(function(bs){
+        var v=[];
+        for(var i=0;i<bs.length;i++){
+          var b=bs[i],cx=b.x,cz=b.z,h=b.h*.85,s=b.s,n=s.length;
+          for(var j=0;j<n;j++){
+            var k=(j+1)%n;
+            var x1=cx+s[j][0],z1=cz-s[j][1],x2=cx+s[k][0],z2=cz-s[k][1];
+            v.push(x1,0,z1, x2,0,z2, x2,h,z2,  x1,0,z1, x2,h,z2, x1,h,z1);
+          }
+          v.push(cx+s[0][0],h,cz-s[0][1], cx+s[1][0],h,cz-s[1][1], cx+s[2][0],h,cz-s[2][1]);
+          if(n>3)v.push(cx+s[0][0],h,cz-s[0][1], cx+s[2][0],h,cz-s[2][1], cx+s[3][0],h,cz-s[3][1]);
+        }
+        var g=new THREE.BufferGeometry();
+        g.setAttribute('position',new THREE.Float32BufferAttribute(v,3));
+        pivot.add(new THREE.Mesh(g,new THREE.MeshBasicMaterial({color:0x0c1a2e,side:THREE.DoubleSide})));
+      }).catch(function(){});
+      /* 船只光点 ×2（沿江缓慢往返漂）+ 渡轮航线光轨 ×2 */
+      var boats=[];
+      for(var i=0;i<2;i++){
+        var bt=new THREE.Mesh(new THREE.PlaneGeometry(1.8,.7),
+          new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:1,fog:false}));
+        bt.rotation.x=-Math.PI/2;
+        bt.userData={x:-37-i*7,sp:.055+.02*i,ph:i*2.6};
+        bt.position.set(bt.userData.x,.05,-8+Math.sin(bt.userData.ph)*30);
+        pivot.add(bt);boats.push(bt);
+      }
+      var ferries=[];
+      var frts=[
+        new THREE.QuadraticBezierCurve3(new THREE.Vector3(-45,.04,17),new THREE.Vector3(-36,.04,15),new THREE.Vector3(-25,.04,11)),
+        new THREE.QuadraticBezierCurve3(new THREE.Vector3(-47,.04,-3),new THREE.Vector3(-38,.04,-1),new THREE.Vector3(-25.5,.04,-9))
+      ];
+      for(var i=0;i<frts.length;i++){
+        pivot.add(new THREE.Mesh(new THREE.TubeGeometry(frts[i],24,.05,6,false),
+          new THREE.MeshBasicMaterial({color:0x9fe8ff,transparent:true,opacity:.32,fog:false})));
+        var fd=new THREE.Mesh(new THREE.PlaneGeometry(1,.4),
+          new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.95,fog:false}));
+        fd.rotation.x=-Math.PI/2;pivot.add(fd);
+        ferries.push({c:frts[i],d:fd,off:i*.35,sp:.05});
+      }
+      var t0=performance.now();
+      var running=true;
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){running=e.isIntersecting});
+      },{rootMargin:'80px'}).observe(stage);          /* 滚出视口暂停渲染 */
+      var fpsN=0,fpsT=performance.now(),fpsTier=0;   /* 帧率自适应：弱GPU自动降分辨率 */
+      function loop(now){
+        now=now||performance.now();            /* rAF无参调用兜底（running暂停分支） */
+        if(!running){requestAnimationFrame(loop);return}
+        fpsN++;
+        if(now-fpsT>2000){
+          var fps=fpsN*1000/(now-fpsT);fpsN=0;fpsT=now;
+          if(fpsTier===0&&fps<24){fpsTier=1;renderer.setPixelRatio(1);renderer.setSize(W,H)}
+          else if(fpsTier===1&&fps<15){fpsTier=2;renderer.setPixelRatio(.75);renderer.setSize(W,H)}
+        }
+        var t=(now-t0)/1000;
+        if(cine.on){
+          var cp=Math.min(1,(now-cine.t0)/1000/cine.dur),ce=cineEase(cp);
+          camera.position.copy(cineVec(cinePosPts,ce,_cineP));
+          camera.lookAt(cineVec(cineLookPts,ce,_cineL));
+          pivot.rotation.y+=(0-pivot.rotation.y)*.04;
+          tiltTarget+=(0-tiltTarget)*.04;
+          if(cp>=1)cineStop();
+        }else{
+          if(!dragging)vel+=(.0032-vel)*.015;
+          if(!dragging)pivot.rotation.y+=vel;
+        }
+        tilt+=(tiltTarget-tilt)*.08;
+        pivot.rotation.x=tilt;
+        for(var i=0;i<rings.length;i++){
+          var p=(t*.5+rings[i].userData.phase)%1;
+          rings[i].scale.setScalar(1+p*6.5);
+          rings[i].material.opacity=.7*(1-p);
+        }
+        beam.material.opacity=.12+Math.sin(t*2.4)*.05;
+        beaconLight.intensity=1.4+Math.sin(t*2.4)*.5;
+        if(window.__riverTex){window.__riverTex.offset.x+=.0012;window.__riverTex.offset.y+=.0005;}
+        if(window.__flowTex)window.__flowTex.offset.x+=.0035;
+        refl.material.opacity=.08+Math.sin(t*2.4)*.045;
+        for(var bi=0;bi<boats.length;bi++){
+          var bo=boats[bi],ud=bo.userData;
+          bo.position.set(ud.x+Math.sin(t*ud.sp+ud.ph)*3,.05,-8+Math.sin(t*ud.sp+ud.ph)*30);
+        }
+        for(var fi=0;fi<ferries.length;fi++){
+          var fe=ferries[fi],fu=(Math.sin(t*fe.sp+fe.off)+1)/2;
+          var fp=fe.c.getPoint(fu);fe.d.position.set(fp.x,.06,fp.z);
+        }
+        for(var wi=0;wi<warnMats.length;wi++)warnMats[wi].emissiveIntensity=.25+.75*Math.abs(Math.sin(t*2.1+wi*1.9));
+        /* 四塔夜景联动：明珠品红呼吸+光波上涌 · SHT反相微呼吸 · 金茂/SWFC檐灯流动 */
+        var tw=window.__towers;
+        if(tw){
+          var eachM=function(arr,fn){arr.forEach(function(o){
+            (Array.isArray(o.material)?o.material:[o.material]).forEach(fn);
+          })};
+          eachM(tw.pearl,function(m){
+            if(!m)return;
+            if(m.emissive)m.emissiveIntensity=1.02+.48*Math.sin(t*1.7);
+            if(m.emissiveMap){m.emissiveMap.wrapT=THREE.RepeatWrapping;m.emissiveMap.offset.y=(t*.055)%1;}
+          });
+          eachM(tw.sht,function(m){
+            if(m&&m.emissive)m.emissiveIntensity=1.4+.2*Math.sin(t*1.7+Math.PI);
+          });
+          eachM(tw.jm,function(m){
+            if(!m)return;
+            if(m.emissiveMap){m.emissiveMap.wrapT=THREE.RepeatWrapping;m.emissiveMap.offset.y=-(t*.03)%1;}
+          });
+          eachM(tw.swfc,function(m){
+            if(!m)return;
+            if(m.emissiveMap){m.emissiveMap.wrapT=THREE.RepeatWrapping;m.emissiveMap.offset.y=(t*.02)%1;}
+            if(m.emissive)m.emissiveIntensity=1.3+.15*Math.sin(t*1.1);
+          });
+        }
+        renderer.render(scene,camera);
+        placeTag();
+        requestAnimationFrame(loop);
+      }
+      if(reduceM){renderer.render(scene,camera);placeTag();return;}
+      cineStart();                          /* 开场巡游（reduceM/已播过则自动跳过） */
+      requestAnimationFrame(loop);
+      window.addEventListener('resize',function(){
+        var w=stage.clientWidth,h=stage.clientHeight;
+        camera.aspect=w/h;camera.updateProjectionMatrix();
+        renderer.setSize(w,h);
+      });
+    }
+  })();
+
+  /* ---------- 弹窗 ---------- */
+  function openModal(id){
+    var m=document.getElementById('modal-'+id);
+    if(m)m.classList.add('open');
+  }
+  function closeModals(){
+    document.querySelectorAll('.modal-mask.open').forEach(function(m){m.classList.remove('open')});
+  }
+  document.querySelectorAll('[data-modal]').forEach(function(b){
+    b.addEventListener('click',function(){openModal(b.getAttribute('data-modal'))});
+  });
+  document.querySelectorAll('[data-close]').forEach(function(b){
+    b.addEventListener('click',closeModals);
+  });
+  document.querySelectorAll('.modal-mask').forEach(function(m){
+    m.addEventListener('click',function(e){if(e.target===m)closeModals()});
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModals()});
+
+  /* ---------- Toast ---------- */
+  var toast=document.getElementById('toast'),toastText=document.getElementById('toast-text'),tt;
+  function showToast(msg){
+    toastText.textContent=msg;
+    toast.classList.add('show');
+    clearTimeout(tt);
+    tt=setTimeout(function(){toast.classList.remove('show')},2600);
+  }
+  document.querySelectorAll('[data-soon]').forEach(function(b){
+    b.addEventListener('click',function(){showToast('该篇章尚未完全成形 —— 解封之日，另行通知')});
+  });
+  document.querySelectorAll('[data-sealed]').forEach(function(b){
+    b.addEventListener('click',function(){showToast('此档案仍处霜封状态 —— 有些答案，需要纪元来揭晓')});
+  });
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"b238635291124dfb9d0cc7b6f1bd8e72","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"b238635291124dfb9d0cc7b6f1bd8e72","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"b238635291124dfb9d0cc7b6f1bd8e72","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"b238635291124dfb9d0cc7b6f1bd8e72","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"b238635291124dfb9d0cc7b6f1bd8e72","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"b238635291124dfb9d0cc7b6f1bd8e72","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"b238635291124dfb9d0cc7b6f1bd8e72","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
